@@ -1,0 +1,584 @@
+[
+  {
+    "id": "74fc85f1-20df-4fbd-b650-6b4abdccd8d1",
+    "createdAt": "2026-01-02T23:00:50.384Z",
+    "title": "Should we start a podcast right now",
+    "description": "I believe that starting a podcast would increase the reputation of our business, get us into the ears of a lot more people",
+    "options": [
+      {
+        "id": "f44db129-c647-4daa-8130-d7b14ba940d2",
+        "name": "Yes start it right now",
+        "description": "",
+        "estimatedCost": 0,
+        "estimatedTimeWeeks": 1
+      },
+      {
+        "id": "287f1271-5dba-4c39-8faf-583a4e2e87eb",
+        "name": "Wait a few months",
+        "description": "",
+        "estimatedCost": 0,
+        "estimatedTimeWeeks": 1
+      }
+    ],
+    "evaluation": {
+      "agentEvaluations": [
+        {
+          "agentType": "financial",
+          "optionScores": [
+            {
+              "optionId": "f44db129-c647-4daa-8130-d7b14ba940d2",
+              "score": 3,
+              "reasoning": "Starting now diverts 5-15 hours/week from €15,500/mo profit-generating activities. With Financial Services Automation at 9/10 strategic value and €15k/mo profit, opportunity cost is severe. Podcast has €0 direct revenue potential short-term. Time invested here directly competes with scaling the €20k/mo revenue arm or developing Tensorix (10/10 strategic value). ROI timeline for podcast brand-building exceeds your 12-month runway pressure."
+            },
+            {
+              "optionId": "287f1271-5dba-4c39-8faf-583a4e2e87eb",
+              "score": 7,
+              "reasoning": "Waiting preserves scarce founder time for high-ROI activities. Focus can remain on Financial Services Automation growth (300% margin) and Tensorix development. In a few months, you may have: more capital buffer, potential team expansion, or validated product-market fit on Tensorix. Starting podcast then would have lower opportunity cost and potentially better content from operational learnings."
+            }
+          ],
+          "keyFactors": [
+            "Extreme time scarcity (5-15 hrs/week) makes opportunity cost the dominant factor",
+            "Financial Services Automation has 300% margin - every hour here generates €37.50 equivalent profit vs €0 for podcast",
+            "No direct revenue attribution mechanism for podcast ROI measurement",
+            "Current €15,500/mo profit should compound into runway extension or product development",
+            "Podcast setup/production typically requires 8-12 hours/week minimum for quality output"
+          ]
+        },
+        {
+          "agentType": "market",
+          "optionScores": [
+            {
+              "optionId": "f44db129-c647-4daa-8130-d7b14ba940d2",
+              "score": 4,
+              "reasoning": "Moderate-high risk. Primary concern is opportunity cost with only 5-15 hours/week available - podcast production, editing, guest coordination, and promotion will consume significant bandwidth. Execution risk is high: podcasts typically take 6-12 months to gain traction, requiring sustained commitment during critical runway period. With 12 months runway and valuation as the goal, time spent on slow-burn brand building competes with revenue-generating activities. Financial risk is low (€0 cost), but the hidden cost is founder attention. Reversibility is good - can stop anytime, but sunk time is unrecoverable. Mitigation: batch record episodes, use AI for editing, keep format simple (30 min, solo or easy-to-book guests)."
+            },
+            {
+              "optionId": "287f1271-5dba-4c39-8faf-583a4e2e87eb",
+              "score": 7,
+              "reasoning": "Lower risk option. Preserves scarce founder time for core business activities during critical growth phase. Timing risk is minimal - podcast market isn't going away, and waiting allows: (1) clearer positioning after more market validation, (2) potential team expansion to delegate production, (3) more compelling stories/case studies to share. Risk of waiting: competitors may build audience first, but podcast differentiation is about unique insights, not first-mover advantage. Downside scenario is limited - 2-3 month delay has minimal strategic impact on a long-term brand-building channel. Main risk: perpetual delay if 'wait' becomes permanent excuse."
+            }
+          ],
+          "keyFactors": [
+            "Severe time constraint (5-15 hrs/week) creates high opportunity cost",
+            "12-month runway demands focus on valuation-driving activities",
+            "Podcasts require 6-12 months for meaningful traction",
+            "Low financial risk but high attention/bandwidth risk",
+            "Solo founder + 1 helper cannot easily delegate production",
+            "Mitigation available: AI editing tools, batch recording, simple format"
+          ]
+        },
+        {
+          "agentType": "risk",
+          "optionScores": [
+            {
+              "optionId": "f44db129-c647-4daa-8130-d7b14ba940d2",
+              "score": 4,
+              "reasoning": "Moderate-high risk. Primary risk is time allocation - with only 5-15 hours/week for strategic work and a 2-person team, a podcast creates ongoing time debt (recording, editing, promotion, guest coordination). Execution risk is high given sparse availability. Opportunity cost risk: those hours could go toward revenue-generating activities or product development that directly impacts valuation. Reversibility is good (can stop anytime), but starting poorly and stopping looks worse than never starting. Low financial risk (€0 cost), but hidden costs in time. Mitigation: batch recording, minimal editing format, or hiring an editor."
+            },
+            {
+              "optionId": "287f1271-5dba-4c39-8faf-583a4e2e87eb",
+              "score": 7,
+              "reasoning": "Lower risk option. Timing risk is minimal - podcasts are not first-mover-advantage territory, and waiting allows better preparation. Reduces execution risk by allowing the team to first solidify revenue/operations. Risk of losing momentum or never starting exists but is manageable. Waiting enables building a guest pipeline, content strategy, and potentially having more bandwidth. Mitigation for 'never starting' risk: set a specific date and milestone trigger (e.g., 'launch after closing next major contract'). Market timing risk is low - podcasts remain relevant and your target audience isn't going anywhere."
+            }
+          ],
+          "keyFactors": [
+            "Time scarcity risk - 5-15 hrs/week is extremely limited for adding recurring commitments",
+            "Opportunity cost - hours spent on podcast vs. direct valuation-building activities",
+            "Execution risk - understaffed team may produce inconsistent or low-quality content",
+            "Low financial risk - €0 direct cost for either option",
+            "High reversibility - can stop podcast or delay start date without major consequences",
+            "Mitigation available - batching, outsourcing editing, minimal viable format"
+          ]
+        },
+        {
+          "agentType": "gametheory",
+          "optionScores": [
+            {
+              "optionId": "f44db129-c647-4daa-8130-d7b14ba940d2",
+              "score": 2,
+              "reasoning": "Starting now is extremely resource-intensive. You're already at 200h/month against 160h capacity (25% over). Podcasts require 8-15h/week for research, recording, editing, promotion. This would push you to severe burnout territory with no bandwidth for your 10/10 strategic value AI Product."
+            },
+            {
+              "optionId": "287f1271-5dba-4c39-8faf-583a4e2e87eb",
+              "score": 7,
+              "reasoning": "Waiting allows time to reduce Dev Studio hours (80h at 4/10 value is your biggest inefficiency). Freeing 40-50h from Dev Studio would create podcast capacity without sacrificing high-value work. Also allows time to systematize other arms for delegation."
+            }
+          ],
+          "keyFactors": [
+            "Already 40h/month over sustainable capacity (200h vs 160h)",
+            "Podcast requires consistent 8-15h/week commitment indefinitely",
+            "Dev Studio consuming 40% of time for only 4/10 strategic value",
+            "AI Product (10/10 value) and Financial Services (9/10 value) need protection",
+            "5-15h/week strategic bandwidth is already spoken for"
+          ]
+        },
+        {
+          "agentType": "resource",
+          "optionScores": [
+            {
+              "optionId": "f44db129-c647-4daa-8130-d7b14ba940d2",
+              "score": 2,
+              "reasoning": "Starting now would add 10-20h/month to an already overcommitted 200h schedule (vs 160h capacity). Podcasts require consistent weekly commitment for recording, editing, guest coordination, and promotion. With only 5-15h/week for strategic work, this leaves zero margin."
+            },
+            {
+              "optionId": "287f1271-5dba-4c39-8faf-583a4e2e87eb",
+              "score": 6,
+              "reasoning": "Waiting allows time to reduce Dev Studio hours (80h at 4/10 value is your biggest inefficiency), build systems, and create capacity. A few months could free 40-60h/month through delegation or sunsetting low-value work."
+            }
+          ],
+          "keyFactors": [
+            "Already 40h/month over sustainable capacity (200h committed vs 160h available)",
+            "Dev Studio consumes 40% of time but delivers only 4/10 strategic value",
+            "Podcasts require consistent ongoing commitment - not a one-time effort",
+            "No slack in schedule means any new commitment risks burnout or quality decline on high-value work (Tensorix, Financial Services)"
+          ]
+        }
+      ],
+      "recommendedOptionId": "287f1271-5dba-4c39-8faf-583a4e2e87eb",
+      "confidence": 92,
+      "synthesis": "There is strong consensus across all five agents recommending waiting before starting the podcast. The core issue is severe resource constraint: you're already operating at 200h/month against 160h sustainable capacity (25% over), with only 5-15h/week available for strategic work. A podcast demands 8-15h/week for recording, editing, guest coordination, and promotion—this would consume your entire strategic bandwidth while delivering zero direct revenue in the short term. The Financial Agent highlights that every hour spent on podcast competes with your 300%-margin Financial Services Automation (€37.50/hour equivalent value) and critical Tensorix development (10/10 strategic value). The Game Theory and Resource Agents identify a clear path forward: your Dev Studio arm consumes 80h/month (40% of capacity) for only 4/10 strategic value. Waiting 2-3 months allows you to reduce or delegate Dev Studio work, freeing 40-60h/month that could fund the podcast without sacrificing high-value activities. The Market Agent notes podcasts take 6-12 months to gain traction anyway, so a brief delay has minimal strategic impact. Waiting also enables better content (more case studies, validated learnings) and potentially hiring production help. The unanimous recommendation: delay the podcast launch, use the next few months to create capacity through efficiency gains, then launch from a position of operational strength rather than scarcity.",
+      "dissent": [
+        "Minor concern from Market Agent: waiting indefinitely could become a permanent excuse—recommend setting a specific trigger date or milestone (e.g., 'launch after securing next major contract' or 'launch when Dev Studio hours drop below 40h/month')"
+      ],
+      "reviewDate": "2026-01-02T23:01:46.844Z",
+      "debates": [],
+      "consensusReached": true,
+      "deliberationRounds": 1
+    }
+  },
+  {
+    "id": "3c5f9eb7-d4e3-4a8c-b86b-9405757eb426",
+    "createdAt": "2026-01-02T23:07:07.122Z",
+    "title": "Should we get rid of the development studio.",
+    "description": "We have been running an AI development studio for a while now, we develop out other peoples startups. This has been our primary source of income. It takes too much work to do to be honest, I'd like to focus on other shit. I got a guy to run that side of the business but the thing is that even with him running it, I still think with complications that it'll take up too much of our time. It does give us a lot of inside information to other businesses that we could implement later on in our AI product, build out things for those companies. The hard part about AI is figuring out the problems of customers, we have an advantage with this.",
+    "options": [
+      {
+        "id": "bb44a5f0-bc98-4b15-96da-2407d2d48cb1",
+        "name": "Get rid of it fully immediately",
+        "description": "Complete out any existing contracts and not offer any more",
+        "estimatedCost": 0,
+        "estimatedTimeWeeks": 1
+      },
+      {
+        "id": "0bb82a5b-fee9-4262-825f-8ccbf9e07d8a",
+        "name": "Keep it going",
+        "description": "",
+        "estimatedCost": 0,
+        "estimatedTimeWeeks": 1
+      },
+      {
+        "id": "b2d185ec-8856-47f6-990d-6bea14e1dbc1",
+        "name": "Try to get the other guy to run it almost independently",
+        "description": "This would require the CEO to seal deals which would still take time. ",
+        "estimatedCost": 0,
+        "estimatedTimeWeeks": 1
+      }
+    ],
+    "evaluation": {
+      "agentEvaluations": [
+        {
+          "agentType": "financial",
+          "optionScores": [
+            {
+              "optionId": "bb44a5f0-bc98-4b15-96da-2407d2d48cb1",
+              "score": 4,
+              "reasoning": "HIGH FINANCIAL RISK: Eliminating primary revenue source (€20k/month) immediately creates severe cash flow pressure. With 12-month runway, losing this income without replacement accelerates burn dramatically. However, UPSIDE: eliminates distraction risk and frees 100% of limited time (5-15hrs/week) for strategic focus. MITIGATION: Only viable if alternative revenue or funding is imminent. Reversibility is LOW - clients won't wait."
+            },
+            {
+              "optionId": "0bb82a5b-fee9-4262-825f-8ccbf9e07d8a",
+              "score": 5,
+              "reasoning": "MODERATE EXECUTION RISK: Maintains revenue but perpetuates founder time drain, directly threatening strategic goal (valuation). OPPORTUNITY COST RISK is high - 5-15 hrs/week is too scarce to split. DEPENDENCY RISK: Relying on studio income delays product focus that VCs want to see. UPSIDE: Keeps customer insight pipeline alive, maintains cash flow. Reversibility is HIGH but the longer you wait, the harder the transition."
+            },
+            {
+              "optionId": "b2d185ec-8856-47f6-990d-6bea14e1dbc1",
+              "score": 7,
+              "reasoning": "LOWEST OVERALL RISK: Preserves revenue stream while reducing founder time commitment. KEY RISKS: (1) Delegation risk - guy may not close deals as effectively, (2) Quality risk - work without CEO oversight may damage reputation, (3) Leakage risk - CEO still gets pulled in for complications. MITIGATIONS: Set clear boundaries (CEO only for deals >X value), create playbooks, accept some revenue decline as acceptable tradeoff. Maintains customer insight advantage. Reversibility is HIGH - can still shut down later."
+            }
+          ],
+          "keyFactors": [
+            "Primary revenue elimination risk (€20k/month at stake)",
+            "Founder time scarcity (5-15hrs) is the binding constraint",
+            "Delegation effectiveness uncertainty with new guy",
+            "Loss of customer insight pipeline hurts AI product development",
+            "12-month runway provides buffer but not infinite time to pivot",
+            "Mitigation: Gradual wind-down with delegation preserves optionality"
+          ]
+        },
+        {
+          "agentType": "market",
+          "optionScores": [
+            {
+              "optionId": "bb44a5f0-bc98-4b15-96da-2407d2d48cb1",
+              "score": 4,
+              "reasoning": "High financial risk - studio is primary income source generating €20k/month. Immediate shutdown cuts runway dramatically and removes cash cushion before AI product generates revenue. However, risk is partially mitigated by 12-month runway and €5k/month profit margin. Irreversible decision - once clients leave, rebuilding relationships is difficult. Upside: eliminates distraction risk and frees 100% of limited time for strategic goal."
+            },
+            {
+              "optionId": "0bb82a5b-fee9-4262-825f-8ccbf9e07d8a",
+              "score": 5,
+              "reasoning": "Moderate ongoing execution risk - continues to drain founder's scarce 5-15 hours/week, threatening ability to execute on valuation-building activities. Opportunity cost risk is significant given time constraints. Financial risk is low (maintains revenue). Dependency risk: relying on studio income delays building sustainable AI product revenue. Customer insight advantage provides some strategic risk mitigation."
+            },
+            {
+              "optionId": "b2d185ec-8856-47f6-990d-6bea14e1dbc1",
+              "score": 7,
+              "reasoning": "Lowest overall risk profile. Execution risk exists - delegation may fail and CEO still required for deal-closing. Mitigated by: maintaining revenue stream while testing independence model, reversible if it doesn't work, preserves customer insight advantage. Key risk: underestimating CEO time required for sales. Mitigation: set strict time boundaries (e.g., max 3 hours/week on deals) and walk away if exceeded."
+            }
+          ],
+          "keyFactors": [
+            "Primary income source elimination threatens financial stability",
+            "12-month runway provides some buffer but no margin for error",
+            "Founder time scarcity (5-15 hrs/week) makes opportunity cost very high",
+            "Customer insight advantage is strategic asset for AI product development",
+            "Delegation model is reversible and testable with defined boundaries",
+            "Deal-closing time commitment could be capped with clear boundaries"
+          ]
+        },
+        {
+          "agentType": "risk",
+          "optionScores": [
+            {
+              "optionId": "bb44a5f0-bc98-4b15-96da-2407d2d48cb1",
+              "score": 4,
+              "reasoning": "HIGH FINANCIAL RISK: Studio is primary revenue source (likely bulk of €20k/month). Immediate elimination could slash runway dramatically. TIMING RISK: No replacement revenue stream validated yet. UPSIDE: Frees 100% of strategic time for product focus. MITIGATION: Only viable if you have 6+ months of product revenue runway secured or can cut burn significantly."
+            },
+            {
+              "optionId": "0bb82a5b-fee9-4262-825f-8ccbf9e07d8a",
+              "score": 5,
+              "reasoning": "EXECUTION RISK: Founder burnout is real - you've admitted it takes too much work. OPPORTUNITY COST RISK: Continues to drain 5-15 hrs/week from product development, delaying valuation goals. UPSIDE: Maintains cash flow and customer insight pipeline. DEPENDENCY RISK: Revenue dependent on CEO closing deals indefinitely. This is a slow bleed scenario - manageable but not sustainable."
+            },
+            {
+              "optionId": "b2d185ec-8856-47f6-990d-6bea14e1dbc1",
+              "score": 7,
+              "reasoning": "BALANCED RISK PROFILE: Maintains revenue while reducing (not eliminating) time drain. EXECUTION RISK: Depends heavily on the guy's capability to handle client complications independently. CEO still on hook for sales. MITIGATION: Set clear boundaries - max 2-3 hrs/week on deals, delegate everything else. REVERSIBILITY: High - can pivot to Option 1 if it doesn't work. Preserves customer insight advantage while testing delegation model."
+            }
+          ],
+          "keyFactors": [
+            "Primary revenue elimination without replacement is existential risk",
+            "Founder time scarcity (5-15 hrs/week) makes full operation unsustainable",
+            "Customer insight pipeline has strategic value for AI product development",
+            "Delegation model (Option 3) is most reversible - can escalate to full exit later",
+            "12-month runway provides buffer to test delegation before committing",
+            "Sales dependency on CEO remains a bottleneck in all scenarios except full exit"
+          ]
+        },
+        {
+          "agentType": "gametheory",
+          "optionScores": [
+            {
+              "optionId": "bb44a5f0-bc98-4b15-96da-2407d2d48cb1",
+              "score": 6,
+              "reasoning": "Immediately frees 80h/month (40% of capacity). You're already 40h over sustainable capacity at 200h vs 160h max. This single action brings you back to manageable levels and lets you focus 100% on high-value arms (Tensorix at 10/10, FSA at 9/10). [Adjusted after debate: The challenge is valid because gametheory's analysis focused purely on capacity optimization without adequately weighing the severe financial consequences. A 10/10 score implies near-perfect strategic advice, but recommending immediate elimination of €20k/month primary revenue without addressing replacement income or the accelerated runway burn is a critical oversight. The score should be adjusted to reflect that while the capacity math is correct, the recommendation is financially reckless without mitigation strategy.]"
+            },
+            {
+              "optionId": "0bb82a5b-fee9-4262-825f-8ccbf9e07d8a",
+              "score": 5,
+              "reasoning": "Maintains severe resource drain. 80h/month for 4/10 strategic value is a 20:1 inefficiency ratio compared to Tensorix. Perpetuates burnout risk and starves your highest-value initiatives of founder attention. [Adjusted after debate: The challenge is valid but reinforces rather than contradicts gametheory's position. Financial's analysis adds nuance by quantifying the opportunity cost (5-15 hrs/week is 'too scarce to split') and highlighting the dependency risk that delays product focus VCs want. However, financial also notes legitimate upsides (customer insights, cash flow, high reversibility) that gametheory's pure efficiency analysis overlooked. The resolution should acknowledge that while the 20:1 inefficiency ratio is real, the option has strategic hedging value that warrants a slight score increase.]"
+            },
+            {
+              "optionId": "b2d185ec-8856-47f6-990d-6bea14e1dbc1",
+              "score": 5,
+              "reasoning": "Partial delegation but CEO still required for deal-closing. Realistically reduces to ~20-30h/month founder time (sales calls, crisis management, quality oversight). Still competes with your 5-15h/week strategic work budget."
+            }
+          ],
+          "keyFactors": [
+            "You're operating at 125% capacity (200h committed vs 160h sustainable)",
+            "Dev Studio ROI is 4/10 strategic value for 40% of time - worst ratio in portfolio",
+            "Opportunity cost: every hour on Dev Studio is an hour NOT on Tensorix (10/10 value)",
+            "Customer insight benefit is real but can be obtained through less time-intensive channels",
+            "Deal-closing cannot be delegated without significant founder involvement"
+          ]
+        },
+        {
+          "agentType": "resource",
+          "optionScores": [
+            {
+              "optionId": "bb44a5f0-bc98-4b15-96da-2407d2d48cb1",
+              "score": 7,
+              "reasoning": "Immediately frees 80h/month (50% of founder capacity). Current allocation is 200h vs 160h capacity - you're already overcommitted by 40h. This single decision brings you back to sustainable operations and unlocks time for high-value arms (Tensorix at 10/10 strategic value). [Adjusted after debate: The resource benefit is real but must be weighted against financial sustainability. The 80h/month freed is valuable only if the business survives the cash flow impact. Score should reflect that resource gains are conditional on financial viability.]"
+            },
+            {
+              "optionId": "0bb82a5b-fee9-4262-825f-8ccbf9e07d8a",
+              "score": 2,
+              "reasoning": "Perpetuates 25% capacity overrun. 80h/month for 4/10 strategic value is the worst ROI in your portfolio. With valuation as goal, founder time on low-strategic-value work directly undermines the objective. Burnout risk is real at 200h/month sustained."
+            },
+            {
+              "optionId": "b2d185ec-8856-47f6-990d-6bea14e1dbc1",
+              "score": 5,
+              "reasoning": "Partial relief but retains key bottleneck. CEO-dependent deal closing will realistically consume 15-25h/month (sales calls, contract negotiations, escalations). Complications you mentioned will pull you back in. Reduces 80h to maybe 25h - helpful but not transformative."
+            }
+          ],
+          "keyFactors": [
+            "You're operating at 125% capacity (200h vs 160h available) - this is unsustainable",
+            "Dev Studio ROI: 80h/month for 4/10 value vs Tensorix: 60h/month for 10/10 value",
+            "Customer insight advantage is real but can be preserved through advisory relationships or selective projects",
+            "Valuation goal requires demonstrable focus on core product, not services revenue"
+          ]
+        }
+      ],
+      "recommendedOptionId": "b2d185ec-8856-47f6-990d-6bea14e1dbc1",
+      "confidence": 75,
+      "synthesis": "The council reaches moderate consensus on Option 3 (delegated independence) as the optimal path forward. Financial, Market, and Risk agents all scored this highest at 7/10, recognizing it as the lowest-risk approach that preserves revenue while reducing founder time drain. The core logic: you're at 125% capacity (200h vs 160h sustainable), the studio consumes 80h/month for only 4/10 strategic value, but it generates your primary revenue (~€20k/month). Immediate elimination (Option 1) solves the capacity problem but creates existential financial risk - you'd be burning runway faster with no validated replacement revenue. Keeping status quo (Option 2) maintains cash flow but perpetuates burnout and starves high-value initiatives like Tensorix. Option 3 threads the needle: it reduces founder time to ~20-30h/month (primarily deal-closing), maintains cash flow, preserves the customer insight advantage for your AI product, and critically - it's reversible. If delegation fails, you can still pivot to full exit. Implementation requires strict boundaries: cap CEO time at 3-5 hours/week maximum, create playbooks for the operator, accept some revenue decline as acceptable, and only engage for deals above a threshold value.",
+      "dissent": [
+        "Resource Agent strongly dissents (scored Option 3 at 5/10 vs Option 1 at 7/10), arguing that delegation still retains a key bottleneck and the 15-25h/month realistic commitment is not transformative enough to solve the capacity crisis",
+        "GameTheory Agent notes the math still doesn't fully work - you need 80h freed to hit sustainable operations, but delegation only gets you 50-60h back, leaving you at ~105% capacity",
+        "All agents agree CEO deal-closing dependency remains an unsolved bottleneck regardless of option chosen"
+      ],
+      "reviewDate": "2026-01-02T23:08:54.494Z",
+      "debates": [
+        {
+          "round": 1,
+          "agentType": "financial",
+          "position": "Score 4/10: HIGH FINANCIAL RISK: Eliminating primary revenue source (€20k/month) immediately creates severe cash flow pressure. With 12-month runway, losing this income without replacement accelerates burn dramatically. However, UPSIDE: eliminates distraction risk and frees 100% of limited time (5-15hrs/week) for strategic focus. MITIGATION: Only viable if alternative revenue or funding is imminent. Reversibility is LOW - clients won't wait."
+        },
+        {
+          "round": 1,
+          "agentType": "gametheory",
+          "position": "Score 9/10: Immediately frees 80h/month (40% of capacity). You're already 40h over sustainable capacity at 200h vs 160h max. This single action brings you back to manageable levels and lets you focus 100% on high-value arms (Tensorix at 10/10, FSA at 9/10).",
+          "challengedBy": "financial",
+          "challenge": "Disagrees on bb44a5f0-bc98-4b15-96da-2407d2d48cb1 by 5 points"
+        },
+        {
+          "round": 1,
+          "agentType": "chief-of-staff",
+          "position": "The challenge is valid because gametheory's analysis focused purely on capacity optimization without adequately weighing the severe financial consequences. A 10/10 score implies near-perfect strategic advice, but recommending immediate elimination of €20k/month primary revenue without addressing replacement income or the accelerated runway burn is a critical oversight. The score should be adjusted to reflect that while the capacity math is correct, the recommendation is financially reckless without mitigation strategy.",
+          "response": "Challenge valid. gametheory's score adjusted."
+        },
+        {
+          "round": 2,
+          "agentType": "financial",
+          "position": "Score 4/10: HIGH FINANCIAL RISK: Eliminating primary revenue source (€20k/month) immediately creates severe cash flow pressure. With 12-month runway, losing this income without replacement accelerates burn dramatically. However, UPSIDE: eliminates distraction risk and frees 100% of limited time (5-15hrs/week) for strategic focus. MITIGATION: Only viable if alternative revenue or funding is imminent. Reversibility is LOW - clients won't wait."
+        },
+        {
+          "round": 2,
+          "agentType": "resource",
+          "position": "Score 9/10: Immediately frees 80h/month (50% of founder capacity). Current allocation is 200h vs 160h capacity - you're already overcommitted by 40h. This single decision brings you back to sustainable operations and unlocks time for high-value arms (Tensorix at 10/10 strategic value).",
+          "challengedBy": "financial",
+          "challenge": "Disagrees on bb44a5f0-bc98-4b15-96da-2407d2d48cb1 by 5 points"
+        },
+        {
+          "round": 2,
+          "agentType": "chief-of-staff",
+          "position": "The resource benefit is real but must be weighted against financial sustainability. The 80h/month freed is valuable only if the business survives the cash flow impact. Score should reflect that resource gains are conditional on financial viability.",
+          "response": "Challenge valid. resource's score adjusted."
+        },
+        {
+          "round": 3,
+          "agentType": "financial",
+          "position": "Score 5/10: MODERATE EXECUTION RISK: Maintains revenue but perpetuates founder time drain, directly threatening strategic goal (valuation). OPPORTUNITY COST RISK is high - 5-15 hrs/week is too scarce to split. DEPENDENCY RISK: Relying on studio income delays product focus that VCs want to see. UPSIDE: Keeps customer insight pipeline alive, maintains cash flow. Reversibility is HIGH but the longer you wait, the harder the transition."
+        },
+        {
+          "round": 3,
+          "agentType": "gametheory",
+          "position": "Score 2/10: Maintains severe resource drain. 80h/month for 4/10 strategic value is a 20:1 inefficiency ratio compared to Tensorix. Perpetuates burnout risk and starves your highest-value initiatives of founder attention.",
+          "challengedBy": "financial",
+          "challenge": "Disagrees on 0bb82a5b-fee9-4262-825f-8ccbf9e07d8a by 3 points"
+        },
+        {
+          "round": 3,
+          "agentType": "chief-of-staff",
+          "position": "The challenge is valid but reinforces rather than contradicts gametheory's position. Financial's analysis adds nuance by quantifying the opportunity cost (5-15 hrs/week is 'too scarce to split') and highlighting the dependency risk that delays product focus VCs want. However, financial also notes legitimate upsides (customer insights, cash flow, high reversibility) that gametheory's pure efficiency analysis overlooked. The resolution should acknowledge that while the 20:1 inefficiency ratio is real, the option has strategic hedging value that warrants a slight score increase.",
+          "response": "Challenge valid. gametheory's score adjusted."
+        }
+      ],
+      "consensusReached": false,
+      "deliberationRounds": 3
+    }
+  },
+  {
+    "id": "a2f0db35-d22d-422b-bc2a-f279385d76ab",
+    "createdAt": "2026-01-02T23:13:39.229Z",
+    "title": "Should we start a podcast right now?",
+    "description": "I believe that starting a podcast would increase the reputation of our business, get us into the ears of a lot more people",
+    "options": [
+      {
+        "id": "d1e701ef-dc00-4783-941c-748f6229c751",
+        "name": "Yes",
+        "description": "",
+        "estimatedCost": 0,
+        "estimatedTimeWeeks": 1
+      },
+      {
+        "id": "cf680e30-c38f-4fbe-aa21-4b0b4b50a423",
+        "name": "No",
+        "description": "",
+        "estimatedCost": 0,
+        "estimatedTimeWeeks": 1
+      }
+    ]
+  },
+  {
+    "id": "7da755cd-d620-4afe-b666-e8cd1c3d816c",
+    "createdAt": "2026-01-02T23:14:17.947Z",
+    "title": "Should we start a podcast right now",
+    "description": "I believe that starting a podcast would increase the reputation of our business, get us into the ears of a lot more people",
+    "options": [
+      {
+        "id": "3eaa838a-7110-4a40-b949-d796d334e009",
+        "name": "Yes",
+        "description": "",
+        "estimatedCost": 0,
+        "estimatedTimeWeeks": 1
+      },
+      {
+        "id": "ee88a846-918a-4c44-9d5a-241f05a4e531",
+        "name": "No",
+        "description": "",
+        "estimatedCost": 0,
+        "estimatedTimeWeeks": 1
+      },
+      {
+        "id": "6e452d06-14fc-4c8a-92e9-c5f8640c932a",
+        "name": "Yes but wait a few months",
+        "description": "",
+        "estimatedCost": 0,
+        "estimatedTimeWeeks": 1
+      }
+    ],
+    "evaluation": {
+      "agentEvaluations": [
+        {
+          "agentType": "financial",
+          "optionScores": [
+            {
+              "optionId": "3eaa838a-7110-4a40-b949-d796d334e009",
+              "score": 3,
+              "reasoning": "Starting now diverts 5-15 hrs/week from €15,500/mo profit-generating arms. Hidden costs: equipment (€500-2000), editing time/software (€100-500/mo), opportunity cost of ~€2,000-4,000/mo in forgone strategic work. ROI timeline is 12-18 months minimum for podcast traction. With valuation goal, direct product development (Tensorix) or scaling Financial Services yields faster, measurable returns."
+            },
+            {
+              "optionId": "ee88a846-918a-4c44-9d5a-241f05a4e531",
+              "score": 7,
+              "reasoning": "Preserves current financial trajectory. €15,500/mo profit continues compounding. Allows full focus on high-strategic-value arms: Financial Services (9/10, €15k profit) and Tensorix (10/10, needs investment). Opportunity cost of NOT doing podcast now is minimal—brand building can wait until product-market fit is stronger. Cash preservation extends runway beyond 12 months."
+            },
+            {
+              "optionId": "6e452d06-14fc-4c8a-92e9-c5f8640c932a",
+              "score": 8,
+              "reasoning": "Optimal financial timing. Wait 3-6 months allows: (1) Tensorix to generate revenue baseline for podcast content/case studies, (2) accumulate €45-90k additional profit as buffer, (3) potentially hire part-time editor/producer from profits. Podcast then amplifies existing success rather than consuming resources during critical growth phase. Better unit economics on content ROI."
+            }
+          ],
+          "keyFactors": [
+            "Opportunity cost: 5-15 hrs/week = €2,000-4,000/mo equivalent value diverted from revenue-generating work",
+            "Podcast ROI timeline (12-18 mo) misaligned with 12-month runway and valuation goal urgency",
+            "Financial Services at €15k/mo profit is the cash engine—protecting founder time here is critical",
+            "Tensorix at -€2k/mo needs strategic hours more than brand awareness currently",
+            "Hidden costs (equipment, editing, hosting) erode the '€0 estimated cost' assumption"
+          ]
+        },
+        {
+          "agentType": "market",
+          "optionScores": [
+            {
+              "optionId": "3eaa838a-7110-4a40-b949-d796d334e009",
+              "score": 2,
+              "reasoning": "Starting a podcast now is resource-catastrophic. You're already at 200h/month against 160h capacity (25% overcommitted). A quality podcast requires 8-15h/week minimum (research, recording, editing, promotion). This would push you to 240+ hours/month—a guaranteed burnout trajectory. With 5-15h/week for strategic work, a podcast would consume ALL of it while your 10/10 strategic value AI Product gets starved."
+            },
+            {
+              "optionId": "ee88a846-918a-4c44-9d5a-241f05a4e531",
+              "score": 8,
+              "reasoning": "Declining preserves current resource allocation and allows focus on rebalancing. The 80h/month in Dev Studio (4/10 value) should be redirected to Tensorix (10/10) and Financial Services (9/10) before adding ANY new initiatives. This protects founder capacity and enables proper attention to high-value arms."
+            },
+            {
+              "optionId": "6e452d06-14fc-4c8a-92e9-c5f8640c932a",
+              "score": 6,
+              "reasoning": "Delaying is resource-wise but only if the wait period is used to: (1) reduce Dev Studio hours by 50%, (2) build systems that free founder time, (3) potentially add team capacity. A podcast in 4-6 months could be viable if you first fix the 40h over-commitment and create delegation infrastructure."
+            }
+          ],
+          "keyFactors": [
+            "Currently 40 hours/month OVER sustainable capacity (200h vs 160h)",
+            "80h/month (40% of time) tied up in lowest-value arm (Dev Studio at 4/10)",
+            "5-15h/week strategic bandwidth would be entirely consumed by podcast production",
+            "Team of 2 has zero slack for new initiatives",
+            "Valuation goal requires demonstrable traction in high-value arms, not content marketing"
+          ]
+        },
+        {
+          "agentType": "risk",
+          "optionScores": [
+            {
+              "optionId": "3eaa838a-7110-4a40-b949-d796d334e009",
+              "score": 2,
+              "reasoning": "Starting now is extremely resource-intensive. You're already at 200h/month against 160h capacity (25% overcommitted). A podcast requires 5-10h/week for prep, recording, editing, and promotion. This would push founder time to dangerous burnout territory with no delegation path for a 2-person team."
+            },
+            {
+              "optionId": "ee88a846-918a-4c44-9d5a-241f05a4e531",
+              "score": 9,
+              "reasoning": "Preserves scarce founder capacity for high-value activities. Allows focus on Tensorix (10/10 value) and Financial Services (9/10 value) which directly drive valuation. No additional strain on an already overextended schedule."
+            },
+            {
+              "optionId": "6e452d06-14fc-4c8a-92e9-c5f8640c932a",
+              "score": 7,
+              "reasoning": "Strategically sound if tied to reducing Dev Studio hours (80h at 4/10 value is your biggest inefficiency). In a few months, you could reallocate 40h from Dev Studio wind-down toward podcast, making it sustainable without net capacity increase."
+            }
+          ],
+          "keyFactors": [
+            "Already 40h/month over sustainable capacity (200h committed vs 160h available)",
+            "Dev Studio consuming 40% of time at lowest strategic value (4/10)",
+            "Podcast requires consistent weekly commitment - typically 5-10h/week minimum for quality output",
+            "No slack in system for emergencies or strategic opportunities"
+          ]
+        },
+        {
+          "agentType": "gametheory",
+          "optionScores": [
+            {
+              "optionId": "3eaa838a-7110-4a40-b949-d796d334e009",
+              "score": 2,
+              "reasoning": "Starting now is highly resource-intensive. You're already 40h over capacity (200h committed vs 160h available). A podcast requires 4-8h/week minimum (recording, editing, promotion, guest coordination), adding 16-32h/month to an already unsustainable workload. This directly competes with high-value strategic work on Tensorix (10/10) and Financial Services (9/10)."
+            },
+            {
+              "optionId": "ee88a846-918a-4c44-9d5a-241f05a4e531",
+              "score": 9,
+              "reasoning": "Saying no preserves scarce founder time for highest-value activities. With only 5-15h/week for strategic work and current overcommitment, protecting capacity is critical. No new resource drain, allows focus on reducing Dev Studio hours (4/10 value consuming 40% of time) and maximizing Tensorix/FSA output."
+            },
+            {
+              "optionId": "6e452d06-14fc-4c8a-92e9-c5f8640c932a",
+              "score": 7,
+              "reasoning": "Waiting allows time to reduce Dev Studio commitment, potentially hire/delegate, or build systems that free founder time. Could start when: (1) Dev Studio reduced to <40h/month, (2) one product reaches revenue milestone enabling delegation, (3) helper can own podcast production. Preserves the option without current resource strain."
+            }
+          ],
+          "keyFactors": [
+            "Already 40h/month over sustainable capacity (200h committed vs 160h available)",
+            "Podcast requires ongoing founder time that cannot easily be delegated initially",
+            "Dev Studio consuming 80h (40%) for only 4/10 strategic value - this should be addressed first",
+            "Only 5-15h/week available for strategic work leaves zero buffer for new initiatives"
+          ]
+        },
+        {
+          "agentType": "resource",
+          "optionScores": [
+            {
+              "optionId": "3eaa838a-7110-4a40-b949-d796d334e009",
+              "score": 2,
+              "reasoning": "Starting now is resource-catastrophic. You're already 40h/month OVER capacity (200h committed vs 160h available). A podcast requires 8-15h/week minimum (research, recording, editing, promotion). This would push you to 230-260h/month - a guaranteed path to burnout and quality degradation across all arms."
+            },
+            {
+              "optionId": "ee88a846-918a-4c44-9d5a-241f05a4e531",
+              "score": 8,
+              "reasoning": "Declining preserves scarce founder bandwidth for high-strategic-value work (Tensorix at 10/10, FSA at 9/10). Current allocation shows Dev Studio consuming 80h at only 4/10 value - that's the real problem to solve, not adding new commitments."
+            },
+            {
+              "optionId": "6e452d06-14fc-4c8a-92e9-c5f8640c932a",
+              "score": 6,
+              "reasoning": "Conditionally viable IF you first: (1) reduce Dev Studio hours by 50%+ or pause it, (2) build systems that free up 15-20h/month, (3) have Tensorix/FSA generating enough traction that podcast amplifies rather than distracts. Timing matters - wait until capacity exists."
+            }
+          ],
+          "keyFactors": [
+            "Already 40h/month over sustainable capacity (200h vs 160h)",
+            "Podcast requires 8-15h/week ongoing commitment with no delegation possible initially",
+            "Dev Studio at 80h/month with 4/10 strategic value is the actual resource leak to address",
+            "Only 5-15h/week available for strategic work - podcast would consume ALL of it",
+            "Two-person team cannot absorb additional content creation workload"
+          ]
+        }
+      ],
+      "recommendedOptionId": "ee88a846-918a-4c44-9d5a-241f05a4e531",
+      "confidence": 88,
+      "synthesis": "All five agents converge strongly against starting a podcast now, with the critical issue being resource constraints rather than podcast value itself. You're already operating at 200h/month against 160h sustainable capacity—25% overcommitted. Every agent independently identified this as the core problem. A podcast requires 8-15h/week minimum, which would consume your entire 5-15h/week strategic bandwidth while pushing total hours to burnout territory (230-260h/month). The Financial Agent notes ROI timeline of 12-18 months misaligns with your 12-month runway and valuation goals. Meanwhile, Dev Studio consumes 80h/month (40% of time) at only 4/10 strategic value—this is the actual resource leak to address. Your highest-value arms (Tensorix at 10/10, Financial Services at 9/10 generating €15k/mo profit) need protected founder time, not content marketing that won't move valuation metrics in your timeframe. The 'No' option preserves cash flow trajectory, protects capacity for revenue-generating work, and maintains focus on what directly drives valuation.",
+      "dissent": [
+        "The 'wait a few months' option scored 6-8/10 across agents and represents a valid future path IF you first reduce Dev Studio hours by 50%+, build delegation infrastructure, and create 15-20h/month of freed capacity. This isn't dissent against 'No'—it's a conditional roadmap for revisiting the decision."
+      ],
+      "reviewDate": "2026-01-02T23:15:11.699Z",
+      "debates": [],
+      "consensusReached": true,
+      "deliberationRounds": 1
+    }
+  }
+]

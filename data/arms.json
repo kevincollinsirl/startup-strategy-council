@@ -1,0 +1,57 @@
+[
+  {
+    "id": "arm-dev-studio",
+    "name": "Dev Studio",
+    "description": "Building startups for clients, ~1 month per project at €15k",
+    "monthlyRevenue": 15000,
+    "monthlyCosts": 12000,
+    "timeInvestmentHours": 80,
+    "strategicValue": 4,
+    "status": "active",
+    "dependencies": []
+  },
+  {
+    "id": "arm-automations",
+    "name": "Financial Services Automation",
+    "description": "AI automation contract for regulated financial services company",
+    "monthlyRevenue": 20000,
+    "monthlyCosts": 5000,
+    "timeInvestmentHours": 40,
+    "strategicValue": 9,
+    "status": "active",
+    "dependencies": []
+  },
+  {
+    "id": "arm-product",
+    "name": "AI Product (Tensorix)",
+    "description": "ChatGPT clone with auto-coder, agents, built on Tensorix for compliance",
+    "monthlyRevenue": 0,
+    "monthlyCosts": 2000,
+    "timeInvestmentHours": 60,
+    "strategicValue": 10,
+    "status": "active",
+    "dependencies": ["arm-automations"]
+  },
+  {
+    "id": "arm-events",
+    "name": "Events",
+    "description": "Manus AI, Claude Code events, Launchloop founder community",
+    "monthlyRevenue": 0,
+    "monthlyCosts": 500,
+    "timeInvestmentHours": 20,
+    "strategicValue": 7,
+    "status": "active",
+    "dependencies": []
+  },
+  {
+    "id": "arm-content",
+    "name": "Content & Training",
+    "description": "Podcast, YouTube, social media, paid training platform",
+    "monthlyRevenue": 0,
+    "monthlyCosts": 0,
+    "timeInvestmentHours": 0,
+    "strategicValue": 6,
+    "status": "paused",
+    "dependencies": ["arm-product"]
+  }
+]

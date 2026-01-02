@@ -1,0 +1,41 @@
+{
+  "tam": 50000000000,
+  "sam": 5000000000,
+  "som": 50000000,
+  "marketTrends": [
+    "AI adoption accelerating in regulated industries",
+    "Compliance requirements blocking standard AI tools",
+    "Demand for vibe coding and AI-assisted development",
+    "Enterprise shift to open-source AI models",
+    "Growing need for AI that doesn't train on user data"
+  ],
+  "competitors": [
+    {
+      "id": "comp-openai",
+      "name": "OpenAI",
+      "description": "Leading AI provider but blocked in regulated industries",
+      "strengths": ["Best models", "Brand recognition", "Developer ecosystem"],
+      "weaknesses": ["Data privacy concerns", "Not compliant for finance/healthcare", "Expensive"],
+      "marketShare": 60,
+      "threat": "low"
+    },
+    {
+      "id": "comp-anthropic",
+      "name": "Anthropic",
+      "description": "Claude provider, strong but same compliance issues",
+      "strengths": ["Safety focus", "Long context", "Claude quality"],
+      "weaknesses": ["Same data concerns as OpenAI", "Smaller ecosystem"],
+      "marketShare": 20,
+      "threat": "low"
+    },
+    {
+      "id": "comp-cursor",
+      "name": "Cursor",
+      "description": "AI coding IDE",
+      "strengths": ["Developer focused", "Good UX", "Fast iteration"],
+      "weaknesses": ["Not compliant", "Limited to coding"],
+      "marketShare": 5,
+      "threat": "medium"
+    }
+  ]
+}

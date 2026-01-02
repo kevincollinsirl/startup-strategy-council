@@ -1,0 +1,30 @@
+{
+  "companyName": "Echofold.ai",
+  "monthlyRevenue": 20000,
+  "monthlyBurn": 15000,
+  "teamSize": 2,
+  "runwayMonths": 12,
+  "activeProjects": [
+    "Dev Studio",
+    "Financial Services Automation",
+    "AI Product (Tensorix)",
+    "Events (Manus/Claude Code)",
+    "Launchloop"
+  ],
+  "strategicGoal": "valuation",
+  "keyAssets": [
+    "Unique AI coding ability - production-level software fast and cheap",
+    "Tensorix.AI partnership - compliant AI infrastructure",
+    "Claude Code & Manus sponsorships",
+    "Free 5000 sq ft event space (Vibeworks)",
+    "70+ startup founders network (Launchloop)",
+    "4 potential hackathon sponsors",
+    "Financial services contract with compliance angle"
+  ],
+  "keyConstraints": [
+    "Solo founder + 1 helper",
+    "5-15 hours/week for strategic work",
+    "No VC funding yet",
+    "Time is extremely sparse"
+  ]
+}
