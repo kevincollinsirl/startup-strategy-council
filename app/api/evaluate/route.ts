@@ -1,17 +1,12 @@
 import { NextResponse } from "next/server";
 import { getDecision, getContext, updateDecision } from "@/lib/storage";
 import { runCouncil } from "@/lib/council";
+import { evaluateRequestSchema, validateOrThrow } from "@/lib/schemas";
 
 export async function POST(request: Request) {
   try {
-    const { decisionId } = await request.json();
-
-    if (!decisionId) {
-      return NextResponse.json(
-        { error: "Decision ID is required" },
-        { status: 400 }
-      );
-    }
+    const body = await request.json();
+    const { decisionId } = validateOrThrow(evaluateRequestSchema, body);
 
     // Get decision and context
     const [decision, context] = await Promise.all([
@@ -46,6 +41,9 @@ export async function POST(request: Request) {
     });
   } catch (error) {
     console.error("Evaluation error:", error);
+    if (error instanceof Error && error.message.startsWith('Validation failed')) {
+      return NextResponse.json({ error: error.message }, { status: 400 });
+    }
     return NextResponse.json(
       { error: error instanceof Error ? error.message : "Evaluation failed" },
       { status: 500 }

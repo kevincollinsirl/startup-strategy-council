@@ -1,4 +1,4 @@
-import { askClaude } from '../claude-cli';
+import { askAI } from '../ai-client';
 import { CompanyContext, Decision, AgentEvaluation, BusinessArm } from '../types';
 
 const SYSTEM_PROMPT = `You are the Resource Allocation Agent on a Strategy Council.
@@ -100,7 +100,7 @@ Estimated Time: ${o.estimatedTimeWeeks} weeks
 
 Evaluate each option from a resource allocation perspective. Consider founder time availability, delegation opportunities, bottlenecks, and sustainable capacity. Return your analysis as JSON.`;
 
-  const response = await askClaude(prompt, SYSTEM_PROMPT);
+  const response = await askAI(prompt, SYSTEM_PROMPT);
 
   // Parse JSON from response
   const jsonMatch = response.match(/\{[\s\S]*\}/);

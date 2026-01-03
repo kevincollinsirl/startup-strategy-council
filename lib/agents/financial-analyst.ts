@@ -1,4 +1,4 @@
-import { askClaude } from '../claude-cli';
+import { askAI } from '../ai-client';
 import { CompanyContext, Decision, AgentEvaluation, BusinessArm } from '../types';
 
 const SYSTEM_PROMPT = `You are the Financial Analyst Agent on a Strategy Council.
@@ -92,7 +92,7 @@ Estimated Time: ${o.estimatedTimeWeeks} weeks
 
 Evaluate each option from a financial analyst perspective. Consider payoff matrices, expected values, break-even analysis, and how each option affects the overall business arm portfolio. Return your analysis as JSON.`;
 
-  const response = await askClaude(prompt, SYSTEM_PROMPT);
+  const response = await askAI(prompt, SYSTEM_PROMPT);
 
   // Parse JSON from response
   const jsonMatch = response.match(/\{[\s\S]*\}/);

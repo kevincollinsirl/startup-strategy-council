@@ -1,6 +1,9 @@
 "use client";
 
 import { BusinessArm } from "@/lib/types";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { AlertTriangle } from "lucide-react";
 
 interface ResourceHeatmapProps {
   arms: BusinessArm[];
@@ -32,130 +35,117 @@ export default function ResourceHeatmap({ arms }: ResourceHeatmapProps) {
   const isOverCapacity = capacityUsed > 100;
 
   return (
-    <div className="bg-gray-900 rounded-lg p-6">
-      <h3 className="text-lg font-semibold text-white mb-4">Resource Allocation</h3>
-
-      {/* Capacity Bar */}
-      <div className="mb-6">
-        <div className="flex items-center justify-between mb-2">
-          <span className="text-sm text-gray-400">Founder Capacity Usage</span>
-          <span
-            className={`text-sm font-medium ${
-              isOverCapacity ? "text-red-400" : capacityUsed > 80 ? "text-yellow-400" : "text-green-400"
-            }`}
-          >
-            {totalHours}h / {FOUNDER_CAPACITY}h ({capacityUsed.toFixed(0)}%)
-          </span>
-        </div>
-        <div className="h-3 bg-gray-800 rounded-full overflow-hidden">
-          <div
-            className={`h-full rounded-full transition-all ${
-              isOverCapacity
-                ? "bg-red-600"
-                : capacityUsed > 80
-                ? "bg-yellow-600"
-                : "bg-green-600"
-            }`}
-            style={{ width: `${Math.min(capacityUsed, 100)}%` }}
-          />
-          {isOverCapacity && (
+    <Card>
+      <CardHeader>
+        <CardTitle>Resource Allocation</CardTitle>
+      </CardHeader>
+      <CardContent className="space-y-6">
+        {/* Capacity Bar */}
+        <div>
+          <div className="flex items-center justify-between mb-2">
+            <span className="text-sm text-muted-foreground">Founder Capacity Usage</span>
+            <div className="flex items-center gap-2">
+              <span className={`w-2 h-2 rounded-full ${isOverCapacity ? "bg-red-500" : capacityUsed > 80 ? "bg-amber-500" : "bg-emerald-500"}`} />
+              <span className="text-sm font-medium">
+                {totalHours}h / {FOUNDER_CAPACITY}h ({capacityUsed.toFixed(0)}%)
+              </span>
+            </div>
+          </div>
+          <div className="h-3 bg-secondary rounded-full overflow-hidden">
             <div
-              className="h-full bg-red-500/50 -mt-3 animate-pulse"
-              style={{ width: `${Math.min(capacityUsed - 100, 50)}%`, marginLeft: "100%" }}
+              className="h-full bg-primary rounded-full transition-all"
+              style={{ width: `${Math.min(capacityUsed, 100)}%` }}
             />
+          </div>
+          {isOverCapacity && (
+            <p className="text-xs text-muted-foreground mt-1">Over capacity by {totalHours - FOUNDER_CAPACITY}h</p>
           )}
         </div>
-        {isOverCapacity && (
-          <p className="text-xs text-red-400 mt-1">Over capacity by {totalHours - FOUNDER_CAPACITY}h</p>
-        )}
-      </div>
 
-      {/* Heatmap Grid */}
-      <div className="space-y-3 mb-6">
-        {withEfficiency.map((arm) => {
-          // Color based on efficiency
-          const heatColor = getHeatColor(arm.efficiency);
+        {/* Heatmap Grid */}
+        <div className="space-y-3">
+          {withEfficiency.map((arm) => {
+            // Color based on efficiency using primary color opacity
+            const heatOpacity = getHeatOpacity(arm.efficiency);
+            const statusDot = arm.status === "active" ? "bg-emerald-500" : arm.status === "paused" ? "bg-amber-500" : "bg-muted-foreground";
 
-          return (
-            <div key={arm.id} className="group">
-              <div className="flex items-center justify-between mb-1">
-                <div className="flex items-center gap-2">
+            return (
+              <div key={arm.id} className="group">
+                <div className="flex items-center justify-between mb-1">
+                  <div className="flex items-center gap-2">
+                    <div
+                      className={`w-3 h-3 rounded bg-primary ${heatOpacity}`}
+                      title={`Efficiency: ${arm.efficiency.toFixed(2)} value/hour`}
+                    />
+                    <span className="text-sm">{arm.name}</span>
+                    <Badge variant="secondary" className="gap-1">
+                      <span className={`w-1.5 h-1.5 rounded-full ${statusDot}`} />
+                      {arm.status}
+                    </Badge>
+                  </div>
+                  <div className="flex items-center gap-4 text-sm">
+                    <span className="text-muted-foreground">
+                      {arm.timeInvestmentHours}h ({arm.percentage.toFixed(0)}%)
+                    </span>
+                    <span className="text-muted-foreground">Value: {arm.strategicValue}/10</span>
+                  </div>
+                </div>
+                <div className="h-2 bg-secondary rounded-full overflow-hidden">
                   <div
-                    className={`w-3 h-3 rounded ${heatColor}`}
-                    title={`Efficiency: ${arm.efficiency.toFixed(2)} value/hour`}
+                    className={`h-full bg-primary ${heatOpacity} rounded-full transition-all`}
+                    style={{ width: `${arm.percentage}%` }}
                   />
-                  <span className="text-sm text-gray-300">{arm.name}</span>
-                  <span
-                    className={`text-xs px-1.5 py-0.5 rounded ${
-                      arm.status === "active"
-                        ? "bg-green-600/20 text-green-400"
-                        : arm.status === "paused"
-                        ? "bg-yellow-600/20 text-yellow-400"
-                        : "bg-blue-600/20 text-blue-400"
-                    }`}
-                  >
-                    {arm.status}
-                  </span>
-                </div>
-                <div className="flex items-center gap-4 text-sm">
-                  <span className="text-gray-500">
-                    {arm.timeInvestmentHours}h ({arm.percentage.toFixed(0)}%)
-                  </span>
-                  <span className="text-gray-400">Value: {arm.strategicValue}/10</span>
                 </div>
               </div>
-              <div className="h-2 bg-gray-800 rounded-full overflow-hidden">
-                <div
-                  className={`h-full ${heatColor} rounded-full transition-all`}
-                  style={{ width: `${arm.percentage}%` }}
-                />
-              </div>
+            );
+          })}
+        </div>
+
+        {/* Bottlenecks Warning */}
+        {bottlenecks.length > 0 && (
+          <div className="p-4 bg-secondary border border-border rounded-lg">
+            <div className="flex items-center gap-2 mb-2">
+              <AlertTriangle className="h-4 w-4 text-muted-foreground" />
+              <h4 className="text-sm font-medium">Potential Inefficiencies</h4>
             </div>
-          );
-        })}
-      </div>
-
-      {/* Bottlenecks Warning */}
-      {bottlenecks.length > 0 && (
-        <div className="p-4 bg-red-900/20 border border-red-800/50 rounded-lg">
-          <h4 className="text-sm font-medium text-red-400 mb-2">Potential Inefficiencies</h4>
-          <ul className="space-y-1">
-            {bottlenecks.map((arm) => (
-              <li key={arm.id} className="text-sm text-gray-300">
-                <span className="text-red-400">{arm.name}</span>: {arm.timeInvestmentHours}h/month but
-                only {arm.strategicValue}/10 strategic value
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-
-      {/* Legend */}
-      <div className="mt-4 pt-4 border-t border-gray-800">
-        <p className="text-xs text-gray-500 mb-2">Efficiency (Strategic Value per Hour)</p>
-        <div className="flex items-center gap-4">
-          <div className="flex items-center gap-1">
-            <div className="w-3 h-3 rounded bg-red-600" />
-            <span className="text-xs text-gray-400">Low</span>
+            <ul className="space-y-1">
+              {bottlenecks.map((arm) => (
+                <li key={arm.id} className="text-sm text-muted-foreground">
+                  <span className="text-foreground">{arm.name}</span>: {arm.timeInvestmentHours}h/month but
+                  only {arm.strategicValue}/10 strategic value
+                </li>
+              ))}
+            </ul>
           </div>
-          <div className="flex items-center gap-1">
-            <div className="w-3 h-3 rounded bg-yellow-600" />
-            <span className="text-xs text-gray-400">Medium</span>
-          </div>
-          <div className="flex items-center gap-1">
-            <div className="w-3 h-3 rounded bg-green-600" />
-            <span className="text-xs text-gray-400">High</span>
+        )}
+
+        {/* Legend */}
+        <div className="pt-4 border-t">
+          <p className="text-xs text-muted-foreground mb-2">Efficiency (Strategic Value per Hour)</p>
+          <div className="flex items-center gap-4">
+            <div className="flex items-center gap-1">
+              <div className="w-3 h-3 rounded bg-primary opacity-20" />
+              <span className="text-xs text-muted-foreground">Low</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <div className="w-3 h-3 rounded bg-primary opacity-50" />
+              <span className="text-xs text-muted-foreground">Medium</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <div className="w-3 h-3 rounded bg-primary" />
+              <span className="text-xs text-muted-foreground">High</span>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
+      </CardContent>
+    </Card>
   );
 }
 
-function getHeatColor(efficiency: number): string {
-  if (efficiency < 0.1) return "bg-red-600";
-  if (efficiency < 0.2) return "bg-orange-600";
-  if (efficiency < 0.3) return "bg-yellow-600";
-  if (efficiency < 0.5) return "bg-lime-600";
-  return "bg-green-600";
+function getHeatOpacity(efficiency: number): string {
+  if (efficiency < 0.1) return "opacity-20";
+  if (efficiency < 0.2) return "opacity-35";
+  if (efficiency < 0.3) return "opacity-50";
+  if (efficiency < 0.5) return "opacity-75";
+  return "opacity-100";
 }

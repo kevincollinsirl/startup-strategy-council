@@ -1,21 +1,24 @@
 "use client";
 
 import { AgentDebate } from "@/lib/types";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import {
+  DollarSign,
+  TrendingUp,
+  AlertTriangle,
+  Gamepad2,
+  Clock,
+  Target,
+  MessageSquare,
+  Reply,
+} from "lucide-react";
 
 interface DebateTimelineProps {
   debates: AgentDebate[];
   consensusReached: boolean;
   deliberationRounds: number;
 }
-
-const agentColors: Record<string, string> = {
-  "financial": "border-green-500 bg-green-900/20",
-  "market": "border-purple-500 bg-purple-900/20",
-  "risk": "border-red-500 bg-red-900/20",
-  "gametheory": "border-blue-500 bg-blue-900/20",
-  "resource": "border-yellow-500 bg-yellow-900/20",
-  "chief-of-staff": "border-white bg-gray-800",
-};
 
 const agentLabels: Record<string, string> = {
   "financial": "Financial Analyst",
@@ -26,6 +29,18 @@ const agentLabels: Record<string, string> = {
   "chief-of-staff": "Chief of Staff",
 };
 
+function getAgentIcon(type: string) {
+  const icons: Record<string, React.ReactNode> = {
+    financial: <DollarSign className="h-4 w-4" />,
+    market: <TrendingUp className="h-4 w-4" />,
+    risk: <AlertTriangle className="h-4 w-4" />,
+    gametheory: <Gamepad2 className="h-4 w-4" />,
+    resource: <Clock className="h-4 w-4" />,
+    "chief-of-staff": <Target className="h-4 w-4" />,
+  };
+  return icons[type] || <MessageSquare className="h-4 w-4" />;
+}
+
 export default function DebateTimeline({
   debates,
   consensusReached,
@@ -33,12 +48,16 @@ export default function DebateTimeline({
 }: DebateTimelineProps) {
   if (debates.length === 0) {
     return (
-      <div className="bg-gray-900 rounded-lg p-6">
-        <h3 className="text-lg font-semibold text-white mb-4">Deliberation</h3>
-        <p className="text-gray-400 text-sm">
-          No debates needed - agents reached immediate consensus.
-        </p>
-      </div>
+      <Card>
+        <CardHeader>
+          <CardTitle>Deliberation</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="text-muted-foreground text-sm">
+            No debates needed - agents reached immediate consensus.
+          </p>
+        </CardContent>
+      </Card>
     );
   }
 
@@ -55,75 +74,75 @@ export default function DebateTimeline({
   const rounds = Array.from(roundsMap.entries()).sort((a, b) => a[0] - b[0]);
 
   return (
-    <div className="bg-gray-900 rounded-lg p-6">
-      <div className="flex items-center justify-between mb-6">
-        <h3 className="text-lg font-semibold text-white">Deliberation Timeline</h3>
+    <Card>
+      <CardHeader className="flex flex-row items-center justify-between space-y-0">
+        <CardTitle>Deliberation Timeline</CardTitle>
         <div className="flex items-center gap-3">
-          <span className="text-sm text-gray-400">
+          <span className="text-sm text-muted-foreground">
             {deliberationRounds} round{deliberationRounds !== 1 ? "s" : ""}
           </span>
-          <span
-            className={`px-2 py-1 rounded text-xs font-medium ${
-              consensusReached
-                ? "bg-green-600/20 text-green-400"
-                : "bg-yellow-600/20 text-yellow-400"
-            }`}
-          >
+          <Badge variant="secondary" className="gap-1.5">
+            <span className={`w-2 h-2 rounded-full ${consensusReached ? "bg-emerald-500" : "bg-amber-500"}`} />
             {consensusReached ? "Consensus Reached" : "Partial Consensus"}
-          </span>
+          </Badge>
         </div>
-      </div>
-
-      <div className="space-y-6">
+      </CardHeader>
+      <CardContent className="space-y-6">
         {rounds.map(([roundNumber, roundDebates]) => (
           <div key={roundNumber}>
             <div className="flex items-center gap-2 mb-3">
-              <div className="w-6 h-6 rounded-full bg-gray-700 flex items-center justify-center text-xs font-bold">
+              <div className="w-6 h-6 rounded-full bg-secondary flex items-center justify-center text-xs font-bold">
                 {roundNumber}
               </div>
-              <span className="text-sm text-gray-400">Round {roundNumber}</span>
+              <span className="text-sm text-muted-foreground">Round {roundNumber}</span>
             </div>
 
-            <div className="ml-3 border-l-2 border-gray-700 pl-6 space-y-4">
+            <div className="ml-3 border-l-2 border-border pl-6 space-y-4">
               {roundDebates.map((debate, index) => (
                 <DebateEntry key={index} debate={debate} />
               ))}
             </div>
           </div>
         ))}
-      </div>
-    </div>
+      </CardContent>
+    </Card>
   );
 }
 
 function DebateEntry({ debate }: { debate: AgentDebate }) {
-  const colorClass = agentColors[debate.agentType] || "border-gray-500 bg-gray-900/20";
   const label = agentLabels[debate.agentType] || debate.agentType;
 
   return (
-    <div className={`border-l-2 ${colorClass} pl-4 py-2 rounded-r-lg`}>
+    <div className="border-l-2 border-border bg-secondary/30 pl-4 py-2 rounded-r-lg">
       <div className="flex items-center gap-2 mb-1">
-        <span className="text-sm font-medium text-white">{label}</span>
+        <span className="text-foreground">{getAgentIcon(debate.agentType)}</span>
+        <span className="text-sm font-medium">{label}</span>
         {debate.challengedBy && (
-          <span className="text-xs text-orange-400">
-            (challenged by {agentLabels[debate.challengedBy] || debate.challengedBy})
-          </span>
+          <Badge variant="outline" className="text-xs">
+            challenged by {agentLabels[debate.challengedBy] || debate.challengedBy}
+          </Badge>
         )}
       </div>
 
-      <p className="text-sm text-gray-300">{debate.position}</p>
+      <p className="text-sm text-muted-foreground">{debate.position}</p>
 
       {debate.challenge && (
-        <div className="mt-2 p-2 bg-orange-900/20 rounded border border-orange-800/50">
-          <p className="text-xs text-orange-400 font-medium mb-1">Challenge:</p>
-          <p className="text-sm text-gray-300">{debate.challenge}</p>
+        <div className="mt-2 p-2 bg-secondary rounded border border-border">
+          <div className="flex items-center gap-1 text-xs text-muted-foreground font-medium mb-1">
+            <MessageSquare className="h-3 w-3" />
+            Challenge
+          </div>
+          <p className="text-sm text-muted-foreground">{debate.challenge}</p>
         </div>
       )}
 
       {debate.response && (
-        <div className="mt-2 p-2 bg-blue-900/20 rounded border border-blue-800/50">
-          <p className="text-xs text-blue-400 font-medium mb-1">Resolution:</p>
-          <p className="text-sm text-gray-300">{debate.response}</p>
+        <div className="mt-2 p-2 bg-secondary rounded border border-border">
+          <div className="flex items-center gap-1 text-xs text-muted-foreground font-medium mb-1">
+            <Reply className="h-3 w-3" />
+            Resolution
+          </div>
+          <p className="text-sm text-muted-foreground">{debate.response}</p>
         </div>
       )}
     </div>

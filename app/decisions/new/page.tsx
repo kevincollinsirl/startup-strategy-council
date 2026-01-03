@@ -1,19 +1,22 @@
 import DecisionForm from "@/components/DecisionForm";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function NewDecisionPage() {
   return (
     <div className="max-w-3xl">
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-white mb-2">New Decision</h1>
-        <p className="text-gray-400">
+        <h1 className="text-3xl font-bold mb-2">New Decision</h1>
+        <p className="text-muted-foreground">
           Describe the decision and the options you&apos;re considering.
           The Strategy Council will evaluate each option from multiple perspectives.
         </p>
       </div>
 
-      <div className="bg-gray-900 rounded-lg p-6">
-        <DecisionForm />
-      </div>
+      <Card>
+        <CardContent className="pt-6">
+          <DecisionForm />
+        </CardContent>
+      </Card>
     </div>
   );
 }

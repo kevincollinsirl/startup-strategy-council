@@ -1,79 +1,107 @@
 "use client";
 
 import { Competitor } from "@/lib/types";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Progress } from "@/components/ui/progress";
+import { Pencil, Trash2 } from "lucide-react";
 
 interface CompetitorCardProps {
   competitor: Competitor;
   onEdit?: (competitor: Competitor) => void;
+  onDelete?: (id: string) => void;
 }
 
-export default function CompetitorCard({ competitor, onEdit }: CompetitorCardProps) {
-  const threatColors = {
-    low: "bg-green-600",
-    medium: "bg-yellow-600",
-    high: "bg-red-600",
-  };
+export default function CompetitorCard({ competitor, onEdit, onDelete }: CompetitorCardProps) {
+  const threatDot = {
+    low: "bg-emerald-500",
+    medium: "bg-amber-500",
+    high: "bg-red-500",
+  }[competitor.threat];
+
+  const threatLabel = {
+    low: "Low Threat",
+    medium: "Medium Threat",
+    high: "High Threat",
+  }[competitor.threat];
 
   return (
-    <div className="bg-gray-900 rounded-lg p-6 border border-gray-800 hover:border-gray-700 transition-colors">
+    <Card className="hover:border-primary/50 transition-colors">
       {/* Header */}
-      <div className="flex items-start justify-between mb-4">
+      <CardHeader className="pb-2">
+        <div className="flex items-start justify-between">
+          <div>
+            <CardTitle className="text-lg">{competitor.name}</CardTitle>
+            <p className="text-sm text-muted-foreground mt-1">{competitor.description}</p>
+          </div>
+          <Badge variant="secondary" className="gap-1.5">
+            <span className={`w-2 h-2 rounded-full ${threatDot}`} />
+            {threatLabel}
+          </Badge>
+        </div>
+      </CardHeader>
+
+      <CardContent className="space-y-4">
+        {/* Market Share */}
         <div>
-          <h3 className="text-lg font-semibold text-white">{competitor.name}</h3>
-          <p className="text-sm text-gray-400 mt-1">{competitor.description}</p>
+          <div className="flex items-center justify-between mb-1">
+            <p className="text-xs text-muted-foreground">Market Share</p>
+            <p className="text-xs font-medium">{competitor.marketShare}%</p>
+          </div>
+          <Progress value={competitor.marketShare} className="h-2" />
         </div>
-        <span className={`px-2 py-1 ${threatColors[competitor.threat]} rounded text-xs font-medium capitalize`}>
-          {competitor.threat} threat
-        </span>
-      </div>
 
-      {/* Market Share */}
-      <div className="mb-4">
-        <div className="flex items-center justify-between mb-1">
-          <p className="text-xs text-gray-500">Market Share</p>
-          <p className="text-xs font-medium">{competitor.marketShare}%</p>
+        {/* Strengths */}
+        <div>
+          <p className="text-xs text-muted-foreground mb-2">Strengths</p>
+          <div className="flex flex-wrap gap-1">
+            {competitor.strengths.map((strength, i) => (
+              <Badge key={i} variant="secondary" className="text-xs">
+                {strength}
+              </Badge>
+            ))}
+          </div>
         </div>
-        <div className="h-2 bg-gray-800 rounded-full overflow-hidden">
-          <div
-            className="h-full bg-gradient-to-r from-purple-600 to-pink-600 rounded-full transition-all"
-            style={{ width: `${competitor.marketShare}%` }}
-          />
-        </div>
-      </div>
 
-      {/* Strengths */}
-      <div className="mb-4">
-        <p className="text-xs text-gray-500 mb-2">Strengths</p>
-        <div className="flex flex-wrap gap-1">
-          {competitor.strengths.map((strength, i) => (
-            <span key={i} className="px-2 py-1 bg-green-900/30 text-green-400 rounded text-xs">
-              {strength}
-            </span>
-          ))}
+        {/* Weaknesses */}
+        <div>
+          <p className="text-xs text-muted-foreground mb-2">Weaknesses</p>
+          <div className="flex flex-wrap gap-1">
+            {competitor.weaknesses.map((weakness, i) => (
+              <Badge key={i} variant="outline" className="text-xs">
+                {weakness}
+              </Badge>
+            ))}
+          </div>
         </div>
-      </div>
 
-      {/* Weaknesses */}
-      <div>
-        <p className="text-xs text-gray-500 mb-2">Weaknesses</p>
-        <div className="flex flex-wrap gap-1">
-          {competitor.weaknesses.map((weakness, i) => (
-            <span key={i} className="px-2 py-1 bg-red-900/30 text-red-400 rounded text-xs">
-              {weakness}
-            </span>
-          ))}
-        </div>
-      </div>
-
-      {/* Edit Button */}
-      {onEdit && (
-        <button
-          onClick={() => onEdit(competitor)}
-          className="mt-4 w-full py-2 bg-gray-800 hover:bg-gray-700 rounded-lg text-sm transition-colors"
-        >
-          Edit
-        </button>
-      )}
-    </div>
+        {/* Action Buttons */}
+        {(onEdit || onDelete) && (
+          <div className="flex gap-2">
+            {onEdit && (
+              <Button
+                variant="outline"
+                className="flex-1"
+                onClick={() => onEdit(competitor)}
+              >
+                <Pencil className="h-4 w-4 mr-2" />
+                Edit
+              </Button>
+            )}
+            {onDelete && (
+              <Button
+                variant="outline"
+                size="icon"
+                onClick={() => onDelete(competitor.id)}
+                className="text-destructive hover:text-destructive hover:bg-destructive/10"
+              >
+                <Trash2 className="h-4 w-4" />
+              </Button>
+            )}
+          </div>
+        )}
+      </CardContent>
+    </Card>
   );
 }

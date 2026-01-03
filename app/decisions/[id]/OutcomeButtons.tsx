@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { Button } from "@/components/ui/button";
+import { Check, X, Clock } from "lucide-react";
 
 interface OutcomeButtonsProps {
   decisionId: string;
@@ -32,39 +34,33 @@ export default function OutcomeButtons({ decisionId, currentOutcome }: OutcomeBu
 
   return (
     <div className="flex gap-3">
-      <button
+      <Button
         onClick={() => handleOutcome('success')}
         disabled={saving}
-        className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-          currentOutcome === 'success'
-            ? 'bg-green-600 text-white'
-            : 'bg-gray-700 text-gray-300 hover:bg-green-600/20'
-        }`}
+        variant={currentOutcome === 'success' ? 'default' : 'secondary'}
+        className="gap-2"
       >
-        ✓ Success
-      </button>
-      <button
+        <span className={`w-2 h-2 rounded-full ${currentOutcome === 'success' ? 'bg-white' : 'bg-emerald-500'}`} />
+        Success
+      </Button>
+      <Button
         onClick={() => handleOutcome('failure')}
         disabled={saving}
-        className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-          currentOutcome === 'failure'
-            ? 'bg-red-600 text-white'
-            : 'bg-gray-700 text-gray-300 hover:bg-red-600/20'
-        }`}
+        variant={currentOutcome === 'failure' ? 'default' : 'secondary'}
+        className="gap-2"
       >
-        ✗ Failed
-      </button>
-      <button
+        <span className={`w-2 h-2 rounded-full ${currentOutcome === 'failure' ? 'bg-white' : 'bg-red-500'}`} />
+        Failed
+      </Button>
+      <Button
         onClick={() => handleOutcome('pending')}
         disabled={saving}
-        className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-          currentOutcome === 'pending'
-            ? 'bg-yellow-600 text-white'
-            : 'bg-gray-700 text-gray-300 hover:bg-yellow-600/20'
-        }`}
+        variant={currentOutcome === 'pending' ? 'default' : 'secondary'}
+        className="gap-2"
       >
-        ⏳ Pending
-      </button>
+        <span className={`w-2 h-2 rounded-full ${currentOutcome === 'pending' ? 'bg-white' : 'bg-muted-foreground'}`} />
+        Pending
+      </Button>
     </div>
   );
 }

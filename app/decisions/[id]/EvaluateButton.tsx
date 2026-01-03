@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { CompanyContext } from "@/lib/types";
+import { Button } from "@/components/ui/button";
+import { Loader2, Play } from "lucide-react";
 
 interface EvaluateButtonProps {
   decisionId: string;
@@ -48,15 +50,26 @@ export default function EvaluateButton({ decisionId, context }: EvaluateButtonPr
 
   return (
     <div className="space-y-4">
-      <button
+      <Button
         onClick={handleEvaluate}
         disabled={evaluating}
-        className="px-8 py-4 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-600 rounded-lg font-medium text-lg transition-colors"
+        size="lg"
+        className="px-8 py-6 text-lg"
       >
-        {evaluating ? "Evaluating..." : "Run Strategy Council"}
-      </button>
+        {evaluating ? (
+          <>
+            <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+            Evaluating...
+          </>
+        ) : (
+          <>
+            <Play className="mr-2 h-5 w-5" />
+            Run Strategy Council
+          </>
+        )}
+      </Button>
       {evaluating && (
-        <div className="text-gray-400 animate-pulse">
+        <div className="text-muted-foreground animate-pulse">
           <p>{progress}</p>
           <p className="text-sm mt-2">
             Running CFO, Growth, Risk, and Game Theory agents...

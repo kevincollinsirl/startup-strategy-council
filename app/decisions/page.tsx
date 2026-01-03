@@ -1,6 +1,10 @@
 import Link from "next/link";
 import { getDecisions } from "@/lib/storage";
 import DecisionCard from "@/components/DecisionCard";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Plus, ChevronRight } from "lucide-react";
 
 export const dynamic = "force-dynamic";
 
@@ -12,40 +16,44 @@ export default async function DecisionsPage() {
   const evaluatedCount = decisions.filter((d) => d.evaluation).length;
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold text-white mb-2">Decision History</h1>
-          <p className="text-gray-400">
+          <h1 className="text-3xl font-bold mb-1">Decision History</h1>
+          <p className="text-muted-foreground">
             {decisions.length} total decisions · {evaluatedCount} evaluated · {pendingCount} pending
           </p>
         </div>
-        <Link
-          href="/decisions/new"
-          className="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-medium transition-colors"
-        >
-          + New Decision
-        </Link>
+        <Button asChild>
+          <Link href="/decisions/new">
+            <Plus className="mr-2 h-4 w-4" />
+            New Decision
+          </Link>
+        </Button>
       </div>
 
       {/* Filters */}
-      <div className="flex gap-2">
-        <FilterButton label="All" count={decisions.length} active />
-        <FilterButton label="Pending" count={pendingCount} />
-        <FilterButton label="Evaluated" count={evaluatedCount} />
-      </div>
+      <Tabs defaultValue="all" className="w-full">
+        <TabsList>
+          <TabsTrigger value="all">All ({decisions.length})</TabsTrigger>
+          <TabsTrigger value="pending">Pending ({pendingCount})</TabsTrigger>
+          <TabsTrigger value="evaluated">Evaluated ({evaluatedCount})</TabsTrigger>
+        </TabsList>
+      </Tabs>
 
       {/* Decision List */}
       {sortedDecisions.length === 0 ? (
-        <div className="bg-gray-900 rounded-lg p-12 text-center">
-          <p className="text-gray-400 mb-4">No decisions yet</p>
-          <Link
-            href="/decisions/new"
-            className="text-blue-400 hover:text-blue-300"
-          >
-            Create your first decision →
-          </Link>
-        </div>
+        <Card>
+          <CardContent className="py-12 text-center">
+            <p className="text-muted-foreground mb-4">No decisions yet</p>
+            <Button variant="link" asChild>
+              <Link href="/decisions/new">
+                Create your first decision
+                <ChevronRight className="ml-1 h-4 w-4" />
+              </Link>
+            </Button>
+          </CardContent>
+        </Card>
       ) : (
         <div className="space-y-4">
           {sortedDecisions.map((decision) => (
@@ -54,27 +62,5 @@ export default async function DecisionsPage() {
         </div>
       )}
     </div>
-  );
-}
-
-function FilterButton({
-  label,
-  count,
-  active = false,
-}: {
-  label: string;
-  count: number;
-  active?: boolean;
-}) {
-  return (
-    <button
-      className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-        active
-          ? "bg-blue-600 text-white"
-          : "bg-gray-800 text-gray-300 hover:bg-gray-700"
-      }`}
-    >
-      {label} ({count})
-    </button>
   );
 }

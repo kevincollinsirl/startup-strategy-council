@@ -1,4 +1,4 @@
-import { askClaude } from '../claude-cli';
+import { askAI } from '../ai-client';
 import { CompanyContext, Decision, AgentEvaluation, CouncilEvaluation } from '../types';
 
 const SYSTEM_PROMPT = `You are the Synthesizer Agent on a Strategy Council.
@@ -77,7 +77,7 @@ ${optionSummaries.map(s => `- ${s.name}: ${s.avgScore.toFixed(1)}/10`).join('\n'
 
 Based on all agent perspectives and the company's strategic goal (${context.strategicGoal}), provide your final recommendation as JSON.`;
 
-  const response = await askClaude(prompt, SYSTEM_PROMPT);
+  const response = await askAI(prompt, SYSTEM_PROMPT);
 
   const jsonMatch = response.match(/\{[\s\S]*\}/);
   if (!jsonMatch) {

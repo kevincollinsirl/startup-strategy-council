@@ -1,4 +1,4 @@
-import { askClaude } from '../claude-cli';
+import { askAI } from '../ai-client';
 import { CompanyContext, Decision, AgentEvaluation, CouncilEvaluation, AgentDebate } from '../types';
 
 const SYSTEM_PROMPT = `You are the Chief of Staff Agent on a Strategy Council.
@@ -74,7 +74,7 @@ ${evaluationSummary}
 
 Synthesize all agent perspectives into a final recommendation. Identify the best option considering all factors, note any significant dissent, and provide a confidence level. Return as JSON.`;
 
-  const response = await askClaude(prompt, SYSTEM_PROMPT);
+  const response = await askAI(prompt, SYSTEM_PROMPT);
 
   // Parse JSON from response
   const jsonMatch = response.match(/\{[\s\S]*\}/);
@@ -118,7 +118,7 @@ Option being debated: ${optionId}
 
 Analyze this challenge and determine if it's valid. Should ${challengedAgent}'s score be adjusted? Return as JSON.`;
 
-  const response = await askClaude(prompt, DEBATE_PROMPT);
+  const response = await askAI(prompt, DEBATE_PROMPT);
 
   // Parse JSON from response
   const jsonMatch = response.match(/\{[\s\S]*\}/);

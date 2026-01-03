@@ -2,6 +2,19 @@
 
 import { useState } from "react";
 import { CompanyContext } from "@/lib/types";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Plus, X, Loader2, Check, TrendingUp, Calendar } from "lucide-react";
 
 interface ContextFormProps {
   initialContext: CompanyContext;
@@ -91,191 +104,189 @@ export default function ContextForm({ initialContext }: ContextFormProps) {
   return (
     <div className="space-y-6">
       {/* Company Name */}
-      <div>
-        <label className="block text-sm font-medium text-gray-300 mb-2">
-          Company Name
-        </label>
-        <input
+      <div className="space-y-2">
+        <Label htmlFor="companyName">Company Name</Label>
+        <Input
+          id="companyName"
           type="text"
           value={context.companyName}
           onChange={(e) => setContext({ ...context, companyName: e.target.value })}
-          className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-blue-500"
         />
       </div>
 
       {/* Financial Grid */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div>
-          <label className="block text-sm font-medium text-gray-300 mb-2">
-            Monthly Revenue (€)
-          </label>
-          <input
+        <div className="space-y-2">
+          <Label htmlFor="revenue">Monthly Revenue (EUR)</Label>
+          <Input
+            id="revenue"
             type="number"
             value={context.monthlyRevenue}
             onChange={(e) => setContext({ ...context, monthlyRevenue: Number(e.target.value) })}
-            className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-blue-500"
           />
         </div>
-        <div>
-          <label className="block text-sm font-medium text-gray-300 mb-2">
-            Monthly Burn (€)
-          </label>
-          <input
+        <div className="space-y-2">
+          <Label htmlFor="burn">Monthly Burn (EUR)</Label>
+          <Input
+            id="burn"
             type="number"
             value={context.monthlyBurn}
             onChange={(e) => setContext({ ...context, monthlyBurn: Number(e.target.value) })}
-            className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-blue-500"
           />
         </div>
-        <div>
-          <label className="block text-sm font-medium text-gray-300 mb-2">
-            Team Size
-          </label>
-          <input
+        <div className="space-y-2">
+          <Label htmlFor="team">Team Size</Label>
+          <Input
+            id="team"
             type="number"
             value={context.teamSize}
             onChange={(e) => setContext({ ...context, teamSize: Number(e.target.value) })}
-            className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-blue-500"
           />
         </div>
       </div>
 
       {/* Runway Display */}
-      <div className="bg-gray-800 rounded-lg p-4">
-        <p className="text-sm text-gray-400">Calculated Runway</p>
-        <p className="text-2xl font-bold">
-          {runway === Infinity ? "Profitable" : `${runway} months`}
-        </p>
-      </div>
+      <Card className="bg-secondary">
+        <CardContent className="pt-4 pb-4">
+          <div className="flex items-center gap-3">
+            <div className="p-2 rounded-lg bg-background">
+              {runway === Infinity ? (
+                <TrendingUp className="h-5 w-5 text-foreground" />
+              ) : (
+                <Calendar className="h-5 w-5 text-foreground" />
+              )}
+            </div>
+            <div>
+              <p className="text-sm text-muted-foreground">Calculated Runway</p>
+              <div className="flex items-center gap-2">
+                <p className="text-2xl font-bold">
+                  {runway === Infinity ? "Profitable" : `${runway} months`}
+                </p>
+                {runway === Infinity && <span className="w-2 h-2 rounded-full bg-emerald-500" />}
+              </div>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
 
       {/* Strategic Goal */}
-      <div>
-        <label className="block text-sm font-medium text-gray-300 mb-2">
-          Strategic Goal
-        </label>
-        <select
+      <div className="space-y-2">
+        <Label htmlFor="goal">Strategic Goal</Label>
+        <Select
           value={context.strategicGoal}
-          onChange={(e) => setContext({ ...context, strategicGoal: e.target.value as 'valuation' | 'independence' | 'hybrid' })}
-          className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-blue-500"
+          onValueChange={(value) => setContext({ ...context, strategicGoal: value as 'valuation' | 'independence' | 'hybrid' })}
         >
-          <option value="valuation">€100M+ Valuation (VC Path)</option>
-          <option value="independence">Financial Independence</option>
-          <option value="hybrid">Hybrid Approach</option>
-        </select>
+          <SelectTrigger>
+            <SelectValue placeholder="Select a goal" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="valuation">EUR 100M+ Valuation (VC Path)</SelectItem>
+            <SelectItem value="independence">Financial Independence</SelectItem>
+            <SelectItem value="hybrid">Hybrid Approach</SelectItem>
+          </SelectContent>
+        </Select>
       </div>
 
       {/* Active Projects */}
-      <div>
-        <label className="block text-sm font-medium text-gray-300 mb-2">
-          Active Projects
-        </label>
-        <div className="flex gap-2 mb-2">
-          <input
+      <div className="space-y-2">
+        <Label>Active Projects</Label>
+        <div className="flex gap-2">
+          <Input
             type="text"
             value={newProject}
             onChange={(e) => setNewProject(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && addProject()}
             placeholder="Add project..."
-            className="flex-1 px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-blue-500"
           />
-          <button
-            onClick={addProject}
-            className="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors"
-          >
-            Add
-          </button>
+          <Button type="button" onClick={addProject} size="icon">
+            <Plus className="h-4 w-4" />
+          </Button>
         </div>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2 mt-2">
           {context.activeProjects.map((project, i) => (
-            <span
-              key={i}
-              className="px-3 py-1 bg-gray-800 rounded-full text-sm flex items-center gap-2"
-            >
+            <Badge key={i} variant="secondary" className="gap-1 pr-1">
               {project}
-              <button
+              <Button
+                type="button"
+                variant="ghost"
+                size="icon"
+                className="h-4 w-4 p-0 hover:bg-transparent"
                 onClick={() => removeProject(i)}
-                className="text-gray-400 hover:text-red-400"
               >
-                ×
-              </button>
-            </span>
+                <X className="h-3 w-3" />
+              </Button>
+            </Badge>
           ))}
         </div>
       </div>
 
       {/* Key Assets */}
-      <div>
-        <label className="block text-sm font-medium text-gray-300 mb-2">
-          Key Assets
-        </label>
-        <div className="flex gap-2 mb-2">
-          <input
+      <div className="space-y-2">
+        <Label>Key Assets</Label>
+        <div className="flex gap-2">
+          <Input
             type="text"
             value={newAsset}
             onChange={(e) => setNewAsset(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && addAsset()}
             placeholder="Add asset..."
-            className="flex-1 px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-blue-500"
           />
-          <button
-            onClick={addAsset}
-            className="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors"
-          >
-            Add
-          </button>
+          <Button type="button" onClick={addAsset} size="icon">
+            <Plus className="h-4 w-4" />
+          </Button>
         </div>
-        <ul className="space-y-1">
+        <ul className="space-y-2 mt-2">
           {context.keyAssets.map((asset, i) => (
             <li
               key={i}
-              className="flex items-center justify-between px-3 py-2 bg-gray-800 rounded-lg"
+              className="flex items-center justify-between px-3 py-2 bg-secondary rounded-lg"
             >
               <span className="text-sm">{asset}</span>
-              <button
+              <Button
+                type="button"
+                variant="ghost"
+                size="icon"
+                className="h-6 w-6"
                 onClick={() => removeAsset(i)}
-                className="text-gray-400 hover:text-red-400"
               >
-                ×
-              </button>
+                <X className="h-4 w-4" />
+              </Button>
             </li>
           ))}
         </ul>
       </div>
 
       {/* Key Constraints */}
-      <div>
-        <label className="block text-sm font-medium text-gray-300 mb-2">
-          Key Constraints
-        </label>
-        <div className="flex gap-2 mb-2">
-          <input
+      <div className="space-y-2">
+        <Label>Key Constraints</Label>
+        <div className="flex gap-2">
+          <Input
             type="text"
             value={newConstraint}
             onChange={(e) => setNewConstraint(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && addConstraint()}
             placeholder="Add constraint..."
-            className="flex-1 px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-blue-500"
           />
-          <button
-            onClick={addConstraint}
-            className="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors"
-          >
-            Add
-          </button>
+          <Button type="button" onClick={addConstraint} size="icon">
+            <Plus className="h-4 w-4" />
+          </Button>
         </div>
-        <ul className="space-y-1">
+        <ul className="space-y-2 mt-2">
           {context.keyConstraints.map((constraint, i) => (
             <li
               key={i}
-              className="flex items-center justify-between px-3 py-2 bg-gray-800 rounded-lg"
+              className="flex items-center justify-between px-3 py-2 bg-secondary rounded-lg"
             >
               <span className="text-sm">{constraint}</span>
-              <button
+              <Button
+                type="button"
+                variant="ghost"
+                size="icon"
+                className="h-6 w-6"
                 onClick={() => removeConstraint(i)}
-                className="text-gray-400 hover:text-red-400"
               >
-                ×
-              </button>
+                <X className="h-4 w-4" />
+              </Button>
             </li>
           ))}
         </ul>
@@ -283,15 +294,21 @@ export default function ContextForm({ initialContext }: ContextFormProps) {
 
       {/* Save Button */}
       <div className="flex items-center gap-4">
-        <button
-          onClick={handleSave}
-          disabled={saving}
-          className="px-6 py-3 bg-green-600 hover:bg-green-700 disabled:bg-gray-600 rounded-lg font-medium transition-colors"
-        >
-          {saving ? "Saving..." : "Save Context"}
-        </button>
+        <Button onClick={handleSave} disabled={saving}>
+          {saving ? (
+            <>
+              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+              Saving...
+            </>
+          ) : (
+            "Save Context"
+          )}
+        </Button>
         {saved && (
-          <span className="text-green-400">Saved successfully!</span>
+          <span className="text-muted-foreground flex items-center gap-1.5">
+            <span className="w-2 h-2 rounded-full bg-emerald-500" />
+            Saved successfully
+          </span>
         )}
       </div>
     </div>

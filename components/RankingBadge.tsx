@@ -1,3 +1,6 @@
+import { Badge } from "@/components/ui/badge";
+import { CheckCircle, XCircle, Clock, TrendingUp, TrendingDown, Minus } from "lucide-react";
+
 interface RankingBadgeProps {
   confidence?: number;
   outcome?: 'success' | 'failure' | 'pending';
@@ -6,45 +9,53 @@ interface RankingBadgeProps {
 export default function RankingBadge({ confidence, outcome }: RankingBadgeProps) {
   if (outcome === 'success') {
     return (
-      <span className="px-3 py-1 bg-green-600 rounded-full text-sm font-medium">
+      <Badge variant="secondary" className="gap-1.5">
+        <span className="w-2 h-2 rounded-full bg-emerald-500" />
         Success
-      </span>
+      </Badge>
     );
   }
 
   if (outcome === 'failure') {
     return (
-      <span className="px-3 py-1 bg-red-600 rounded-full text-sm font-medium">
+      <Badge variant="secondary" className="gap-1.5">
+        <span className="w-2 h-2 rounded-full bg-red-500" />
         Failed
-      </span>
+      </Badge>
     );
   }
 
   if (confidence === undefined) {
     return (
-      <span className="px-3 py-1 bg-gray-700 rounded-full text-sm text-gray-300">
-        Pending Evaluation
-      </span>
+      <Badge variant="secondary" className="gap-1.5">
+        <span className="w-2 h-2 rounded-full bg-muted-foreground" />
+        Pending
+      </Badge>
     );
   }
 
-  const color =
-    confidence >= 70
-      ? "bg-green-600"
-      : confidence >= 40
-      ? "bg-yellow-600"
-      : "bg-red-600";
+  if (confidence >= 70) {
+    return (
+      <Badge variant="secondary" className="gap-1.5">
+        <span className="w-2 h-2 rounded-full bg-emerald-500" />
+        Do It ({confidence}%)
+      </Badge>
+    );
+  }
 
-  const label =
-    confidence >= 70
-      ? "Do It"
-      : confidence >= 40
-      ? "Maybe"
-      : "Don't";
+  if (confidence >= 40) {
+    return (
+      <Badge variant="secondary" className="gap-1.5">
+        <span className="w-2 h-2 rounded-full bg-amber-500" />
+        Maybe ({confidence}%)
+      </Badge>
+    );
+  }
 
   return (
-    <span className={`px-3 py-1 ${color} rounded-full text-sm font-medium`}>
-      {label} ({confidence}%)
-    </span>
+    <Badge variant="secondary" className="gap-1.5">
+      <span className="w-2 h-2 rounded-full bg-red-500" />
+      Don't ({confidence}%)
+    </Badge>
   );
 }

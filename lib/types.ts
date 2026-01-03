@@ -122,3 +122,21 @@ export const DEFAULT_CONTEXT: CompanyContext = {
   keyAssets: [],
   keyConstraints: [],
 };
+
+// App Settings
+export type AIProvider = 'claude-cli' | 'openai';
+export type OpenAIModel = 'gpt-4o' | 'gpt-4-turbo' | 'gpt-4' | 'gpt-3.5-turbo';
+
+export interface AppSettings {
+  aiProvider: AIProvider;
+  openaiApiKey?: string;
+  openaiModel: OpenAIModel;
+  onboardingCompleted: boolean;
+}
+
+export const DEFAULT_SETTINGS: AppSettings = {
+  aiProvider: 'claude-cli',
+  openaiApiKey: '',
+  openaiModel: 'gpt-4o',
+  onboardingCompleted: false,
+};

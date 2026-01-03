@@ -32,6 +32,11 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
+
+# User data files (contain sensitive business info)
+/data/*.json
+!/data/.gitkeep
 
 # vercel
 .vercel

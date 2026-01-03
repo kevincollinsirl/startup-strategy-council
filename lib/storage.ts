@@ -1,12 +1,13 @@
 import { promises as fs } from 'fs';
 import path from 'path';
-import { CompanyContext, Decision, BusinessArm, MarketData, Competitor, DEFAULT_CONTEXT, DEFAULT_MARKET_DATA } from './types';
+import { CompanyContext, Decision, BusinessArm, MarketData, Competitor, AppSettings, DEFAULT_CONTEXT, DEFAULT_MARKET_DATA, DEFAULT_SETTINGS } from './types';
 
 const DATA_DIR = path.join(process.cwd(), 'data');
 const CONTEXT_FILE = path.join(DATA_DIR, 'context.json');
 const DECISIONS_FILE = path.join(DATA_DIR, 'decisions.json');
 const ARMS_FILE = path.join(DATA_DIR, 'arms.json');
 const MARKET_FILE = path.join(DATA_DIR, 'market.json');
+const SETTINGS_FILE = path.join(DATA_DIR, 'settings.json');
 
 // Ensure data directory exists
 async function ensureDataDir() {
@@ -154,4 +155,38 @@ export async function deleteCompetitor(id: string): Promise<void> {
   const marketData = await getMarketData();
   marketData.competitors = marketData.competitors.filter(c => c.id !== id);
   await saveMarketData(marketData);
+}
+
+// Settings operations
+export async function getSettings(): Promise<AppSettings> {
+  await ensureDataDir();
+  try {
+    const data = await fs.readFile(SETTINGS_FILE, 'utf-8');
+    const fileSettings = { ...DEFAULT_SETTINGS, ...JSON.parse(data) };
+
+    // SECURITY: Prefer environment variable for API key over file storage
+    const envApiKey = process.env.OPENAI_API_KEY;
+    if (envApiKey) {
+      fileSettings.openaiApiKey = envApiKey;
+    }
+
+    return fileSettings;
+  } catch {
+    // Check environment variable even if file doesn't exist
+    const envApiKey = process.env.OPENAI_API_KEY;
+    if (envApiKey) {
+      return { ...DEFAULT_SETTINGS, openaiApiKey: envApiKey };
+    }
+    return DEFAULT_SETTINGS;
+  }
+}
+
+export async function saveSettings(settings: AppSettings): Promise<void> {
+  await ensureDataDir();
+  await fs.writeFile(SETTINGS_FILE, JSON.stringify(settings, null, 2));
+}
+
+export async function updateSettings(updates: Partial<AppSettings>): Promise<void> {
+  const settings = await getSettings();
+  await saveSettings({ ...settings, ...updates });
 }

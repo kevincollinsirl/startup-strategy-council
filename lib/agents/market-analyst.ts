@@ -1,4 +1,4 @@
-import { askClaude } from '../claude-cli';
+import { askAI } from '../ai-client';
 import { CompanyContext, Decision, AgentEvaluation, MarketData } from '../types';
 
 const SYSTEM_PROMPT = `You are the Market Analyst Agent on a Strategy Council.
@@ -84,7 +84,7 @@ Estimated Time: ${o.estimatedTimeWeeks} weeks
 
 Evaluate each option from a market analyst perspective. Consider TAM/SAM/SOM implications, competitive response, market timing, and customer segment fit. Return your analysis as JSON.`;
 
-  const response = await askClaude(prompt, SYSTEM_PROMPT);
+  const response = await askAI(prompt, SYSTEM_PROMPT);
 
   // Parse JSON from response
   const jsonMatch = response.match(/\{[\s\S]*\}/);

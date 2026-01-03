@@ -1,4 +1,4 @@
-import { askClaude } from '../claude-cli';
+import { askAI } from '../ai-client';
 import { CompanyContext, Decision, AgentEvaluation } from '../types';
 
 const SYSTEM_PROMPT = `You are the Game Theory Agent on a Strategy Council.
@@ -65,7 +65,7 @@ Estimated Time: ${o.estimatedTimeWeeks} weeks
 
 Analyze each option using game theory. Consider: competitive response, network effects, first-mover advantages, and strategic positioning. Return your analysis as JSON.`;
 
-  const response = await askClaude(prompt, SYSTEM_PROMPT);
+  const response = await askAI(prompt, SYSTEM_PROMPT);
 
   const jsonMatch = response.match(/\{[\s\S]*\}/);
   if (!jsonMatch) {

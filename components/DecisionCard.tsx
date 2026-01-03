@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { Decision } from "@/lib/types";
 import RankingBadge from "./RankingBadge";
+import { Card, CardContent } from "@/components/ui/card";
+import { ChevronRight, Calendar, ListChecks } from "lucide-react";
 
 interface DecisionCardProps {
   decision: Decision;
@@ -12,33 +14,41 @@ export default function DecisionCard({ decision }: DecisionCardProps) {
     : null;
 
   return (
-    <Link
-      href={`/decisions/${decision.id}`}
-      className="block bg-gray-900 rounded-lg p-6 hover:bg-gray-800 transition-colors"
-    >
-      <div className="flex items-start justify-between gap-4">
-        <div className="flex-1">
-          <h3 className="text-lg font-medium text-white mb-1">
-            {decision.title}
-          </h3>
-          <p className="text-sm text-gray-400 mb-3 line-clamp-2">
-            {decision.description}
-          </p>
-          <div className="flex items-center gap-4 text-sm text-gray-500">
-            <span>{new Date(decision.createdAt).toLocaleDateString()}</span>
-            <span>{decision.options.length} options</span>
-            {recommendedOption && (
-              <span className="text-blue-400">
-                → {recommendedOption.name}
-              </span>
-            )}
+    <Link href={`/decisions/${decision.id}`}>
+      <Card className="hover:bg-accent transition-colors">
+        <CardContent className="p-6">
+          <div className="flex items-start justify-between gap-4">
+            <div className="flex-1">
+              <h3 className="text-lg font-medium mb-1">
+                {decision.title}
+              </h3>
+              <p className="text-sm text-muted-foreground mb-3 line-clamp-2">
+                {decision.description}
+              </p>
+              <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                <span className="flex items-center gap-1">
+                  <Calendar className="h-3 w-3" />
+                  {new Date(decision.createdAt).toLocaleDateString()}
+                </span>
+                <span className="flex items-center gap-1">
+                  <ListChecks className="h-3 w-3" />
+                  {decision.options.length} options
+                </span>
+                {recommendedOption && (
+                  <span className="text-primary flex items-center gap-1">
+                    <ChevronRight className="h-3 w-3" />
+                    {recommendedOption.name}
+                  </span>
+                )}
+              </div>
+            </div>
+            <RankingBadge
+              confidence={decision.evaluation?.confidence}
+              outcome={decision.outcome}
+            />
           </div>
-        </div>
-        <RankingBadge
-          confidence={decision.evaluation?.confidence}
-          outcome={decision.outcome}
-        />
-      </div>
+        </CardContent>
+      </Card>
     </Link>
   );
 }

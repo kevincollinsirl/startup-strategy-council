@@ -7,27 +7,6 @@ export default function ConfidenceMeter({
   confidence,
   size = 'md',
 }: ConfidenceMeterProps) {
-  const color =
-    confidence >= 70
-      ? 'stroke-green-500'
-      : confidence >= 40
-      ? 'stroke-yellow-500'
-      : 'stroke-red-500';
-
-  const bgColor =
-    confidence >= 70
-      ? 'text-green-500'
-      : confidence >= 40
-      ? 'text-yellow-500'
-      : 'text-red-500';
-
-  const label =
-    confidence >= 70
-      ? 'High Confidence'
-      : confidence >= 40
-      ? 'Moderate Confidence'
-      : 'Low Confidence';
-
   const sizes = {
     sm: { width: 60, stroke: 4, fontSize: 'text-sm' },
     md: { width: 100, stroke: 6, fontSize: 'text-xl' },
@@ -55,7 +34,7 @@ export default function ConfidenceMeter({
             fill="none"
             stroke="currentColor"
             strokeWidth={stroke}
-            className="text-gray-800"
+            className="text-muted"
           />
           <circle
             cx={width / 2}
@@ -66,7 +45,7 @@ export default function ConfidenceMeter({
             strokeLinecap="round"
             strokeDasharray={circumference}
             strokeDashoffset={circumference - progress}
-            className={color}
+            className="stroke-primary"
             style={{
               transition: 'stroke-dashoffset 0.5s ease-in-out',
             }}
@@ -75,14 +54,14 @@ export default function ConfidenceMeter({
 
         {/* Center text */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <span className={`font-bold ${fontSize} ${bgColor}`}>
+          <span className={`font-bold ${fontSize} text-foreground`}>
             {confidence}%
           </span>
         </div>
       </div>
 
       {/* Label */}
-      <p className={`mt-2 text-sm ${bgColor}`}>{label}</p>
+      <p className="mt-2 text-sm text-muted-foreground">Confidence</p>
     </div>
   );
 }
