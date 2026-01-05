@@ -37,9 +37,8 @@
 ### Prerequisites
 
 - Node.js 18+
-- One of the following AI providers:
-  - [Claude CLI](https://github.com/anthropics/claude-code) installed and authenticated (recommended)
-  - OpenAI API key
+- [Claude CLI](https://github.com/anthropics/claude-code) installed and authenticated (recommended)
+- OpenAI API key *(optional alternative to Claude CLI)*
 
 ### Installation
 
@@ -101,8 +100,8 @@ npm install -g @anthropic-ai/claude-code
 claude auth login
 ```
 
-### OpenAI API
-Uses OpenAI GPT models. Requires an API key.
+### OpenAI API (Optional)
+Alternative to Claude CLI. Uses OpenAI GPT models.
 
 1. Get an API key from [OpenAI](https://platform.openai.com/api-keys)
 2. Add to `.env.local`: `OPENAI_API_KEY=sk-...`
