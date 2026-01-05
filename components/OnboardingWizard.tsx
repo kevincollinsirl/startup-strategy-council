@@ -221,7 +221,7 @@ export default function OnboardingWizard({ onComplete, onSkip }: OnboardingWizar
               <Target className="h-8 w-8 text-primary" />
             </div>
             <div>
-              <h2 className="text-2xl font-bold mb-2">Welcome to Strategy Council</h2>
+              <h2 className="text-2xl font-bold mb-2">Welcome to Startup Strategy Council</h2>
               <p className="text-muted-foreground max-w-md mx-auto">
                 A multi-agent AI system that helps you make strategic business decisions.
                 Let&apos;s set up your company profile.
@@ -654,7 +654,7 @@ export default function OnboardingWizard({ onComplete, onSkip }: OnboardingWizar
             <div>
               <h2 className="text-2xl font-bold mb-2">You&apos;re All Set!</h2>
               <p className="text-muted-foreground max-w-md mx-auto">
-                Your Strategy Council is ready. You can always update your settings and data later.
+                Your Startup Strategy Council is ready. You can always update your settings and data later.
               </p>
             </div>
             <div className="p-4 bg-secondary rounded-lg text-left max-w-sm mx-auto">

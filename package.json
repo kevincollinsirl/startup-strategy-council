@@ -1,7 +1,24 @@
 {
-  "name": "strategy-council",
-  "version": "0.1.0",
-  "private": true,
+  "name": "startup-strategy-council",
+  "version": "1.0.0",
+  "description": "Multi-agent AI strategic decision system for startups",
+  "author": "Kevin Collins <kevin@echofold.ai>",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kevincollinsirl/startup-strategy-council.git"
+  },
+  "homepage": "https://echofold.ai",
+  "keywords": [
+    "ai",
+    "multi-agent",
+    "decision-making",
+    "startup",
+    "strategy",
+    "nextjs",
+    "typescript"
+  ],
+  "private": false,
   "scripts": {
     "dev": "next dev",
     "build": "next build",

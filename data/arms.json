@@ -1,57 +1,57 @@
 [
   {
-    "id": "arm-dev-studio",
-    "name": "Dev Studio",
-    "description": "Building startups for clients, ~1 month per project at €15k",
-    "monthlyRevenue": 15000,
-    "monthlyCosts": 12000,
-    "timeInvestmentHours": 80,
-    "strategicValue": 4,
-    "status": "active",
-    "dependencies": []
-  },
-  {
-    "id": "arm-automations",
-    "name": "Financial Services Automation",
-    "description": "AI automation contract for regulated financial services company",
-    "monthlyRevenue": 20000,
-    "monthlyCosts": 5000,
-    "timeInvestmentHours": 40,
+    "id": "arm-saas-platform",
+    "name": "Core SaaS Platform",
+    "description": "B2B analytics platform with AI-powered insights for e-commerce businesses",
+    "monthlyRevenue": 35000,
+    "monthlyCosts": 18000,
+    "timeInvestmentHours": 120,
     "strategicValue": 9,
     "status": "active",
     "dependencies": []
   },
   {
-    "id": "arm-product",
-    "name": "AI Product (Tensorix)",
-    "description": "ChatGPT clone with auto-coder, agents, built on Tensorix for compliance",
-    "monthlyRevenue": 0,
-    "monthlyCosts": 2000,
-    "timeInvestmentHours": 60,
-    "strategicValue": 10,
+    "id": "arm-enterprise",
+    "name": "Enterprise Solutions",
+    "description": "Custom enterprise deployments with dedicated support and SLAs",
+    "monthlyRevenue": 8000,
+    "monthlyCosts": 5000,
+    "timeInvestmentHours": 40,
+    "strategicValue": 8,
     "status": "active",
-    "dependencies": ["arm-automations"]
+    "dependencies": ["arm-saas-platform"]
   },
   {
-    "id": "arm-events",
-    "name": "Events",
-    "description": "Manus AI, Claude Code events, Launchloop founder community",
-    "monthlyRevenue": 0,
-    "monthlyCosts": 500,
+    "id": "arm-api",
+    "name": "Developer API",
+    "description": "Public API for third-party integrations, usage-based pricing",
+    "monthlyRevenue": 2000,
+    "monthlyCosts": 1500,
     "timeInvestmentHours": 20,
     "strategicValue": 7,
     "status": "active",
-    "dependencies": []
+    "dependencies": ["arm-saas-platform"]
   },
   {
-    "id": "arm-content",
-    "name": "Content & Training",
-    "description": "Podcast, YouTube, social media, paid training platform",
+    "id": "arm-consulting",
+    "name": "Implementation Consulting",
+    "description": "Professional services for complex customer implementations",
     "monthlyRevenue": 0,
-    "monthlyCosts": 0,
-    "timeInvestmentHours": 0,
+    "monthlyCosts": 2000,
+    "timeInvestmentHours": 30,
+    "strategicValue": 5,
+    "status": "planned",
+    "dependencies": ["arm-enterprise"]
+  },
+  {
+    "id": "arm-mobile",
+    "name": "Mobile App",
+    "description": "iOS and Android companion apps for on-the-go analytics",
+    "monthlyRevenue": 0,
+    "monthlyCosts": 3000,
+    "timeInvestmentHours": 50,
     "strategicValue": 6,
-    "status": "paused",
-    "dependencies": ["arm-product"]
+    "status": "active",
+    "dependencies": ["arm-saas-platform"]
   }
 ]

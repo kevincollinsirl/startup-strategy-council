@@ -23,7 +23,7 @@ export default function InstructionsPage() {
       <div>
         <h1 className="text-3xl font-bold mb-2">Instructions</h1>
         <p className="text-muted-foreground">
-          Learn how to use Strategy Council to make better strategic decisions
+          Learn how to use Startup Strategy Council to make better strategic decisions
         </p>
       </div>
 
@@ -41,7 +41,7 @@ export default function InstructionsPage() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Lightbulb className="h-5 w-5" />
-                Welcome to Strategy Council
+                Welcome to Startup Strategy Council
               </CardTitle>
               <CardDescription>
                 A multi-agent AI system for strategic business decision-making
@@ -49,7 +49,7 @@ export default function InstructionsPage() {
             </CardHeader>
             <CardContent className="space-y-6">
               <p>
-                Strategy Council uses multiple AI agents, each with a specialized perspective,
+                Startup Strategy Council uses multiple AI agents, each with a specialized perspective,
                 to analyze your strategic decisions. The agents debate, challenge each other,
                 and synthesize their insights into a recommendation with confidence levels.
               </p>

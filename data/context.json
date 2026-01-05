@@ -1,30 +1,27 @@
 {
-  "companyName": "Echofold.ai",
-  "monthlyRevenue": 20000,
-  "monthlyBurn": 15000,
-  "teamSize": 2,
-  "runwayMonths": 12,
+  "companyName": "NovaTech Solutions",
+  "monthlyRevenue": 45000,
+  "monthlyBurn": 35000,
+  "teamSize": 5,
+  "runwayMonths": 18,
   "activeProjects": [
-    "Dev Studio",
-    "Financial Services Automation",
-    "AI Product (Tensorix)",
-    "Events (Manus/Claude Code)",
-    "Launchloop"
+    "Core SaaS Platform",
+    "Mobile App v2",
+    "Enterprise API",
+    "Partner Integrations"
   ],
   "strategicGoal": "valuation",
   "keyAssets": [
-    "Unique AI coding ability - production-level software fast and cheap",
-    "Tensorix.AI partnership - compliant AI infrastructure",
-    "Claude Code & Manus sponsorships",
-    "Free 5000 sq ft event space (Vibeworks)",
-    "70+ startup founders network (Launchloop)",
-    "4 potential hackathon sponsors",
-    "Financial services contract with compliance angle"
+    "Proprietary ML recommendation engine",
+    "300+ paying customers",
+    "SOC 2 Type II certification",
+    "Strategic partnership with major cloud provider",
+    "Strong engineering team with AI expertise"
   ],
   "keyConstraints": [
-    "Solo founder + 1 helper",
-    "5-15 hours/week for strategic work",
-    "No VC funding yet",
-    "Time is extremely sparse"
+    "Limited sales team capacity",
+    "Technical debt from rapid growth",
+    "Competing priorities between new features and stability",
+    "Enterprise sales cycle is 3-6 months"
   ]
 }

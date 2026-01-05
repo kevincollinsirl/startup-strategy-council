@@ -282,7 +282,7 @@ export default async function DecisionDetailPage({ params }: Props) {
               Ready for Evaluation
             </h2>
             <p className="text-muted-foreground mb-6">
-              Run the Strategy Council to get recommendations from all 5 agents.
+              Run the Startup Strategy Council to get recommendations from all 5 agents.
             </p>
             <EvaluateButton decisionId={decision.id} context={context} />
           </CardContent>

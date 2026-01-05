@@ -8,7 +8,7 @@ export default function NewDecisionPage() {
         <h1 className="text-3xl font-bold mb-2">New Decision</h1>
         <p className="text-muted-foreground">
           Describe the decision and the options you&apos;re considering.
-          The Strategy Council will evaluate each option from multiple perspectives.
+          The Startup Strategy Council will evaluate each option from multiple perspectives.
         </p>
       </div>
 

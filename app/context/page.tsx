@@ -12,7 +12,7 @@ export default async function ContextPage() {
       <div className="mb-8">
         <h1 className="text-3xl font-bold mb-2">Company Context</h1>
         <p className="text-muted-foreground">
-          This information helps the Strategy Council make better decisions.
+          This information helps the Startup Strategy Council make better decisions.
           Keep it updated as your situation changes.
         </p>
       </div>

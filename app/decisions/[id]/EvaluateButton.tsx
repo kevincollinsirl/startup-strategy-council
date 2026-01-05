@@ -64,7 +64,7 @@ export default function EvaluateButton({ decisionId, context }: EvaluateButtonPr
         ) : (
           <>
             <Play className="mr-2 h-5 w-5" />
-            Run Strategy Council
+            Run Startup Strategy Council
           </>
         )}
       </Button>

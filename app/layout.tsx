@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Strategy Council",
+  title: "Startup Strategy Council",
   description: "Multi-agent AI strategic decision system",
 };
 

@@ -1,0 +1,49 @@
+Startup Strategy Council
+Copyright 2024-2025 Kevin Collins / Echofold
+
+This product includes software developed by Echofold (https://echofold.ai).
+
+================================================================================
+ATTRIBUTION REQUIREMENT
+================================================================================
+
+If you use this software or any derivative work in your own projects, products,
+or services, you must include a visible attribution to Echofold with a link to
+https://echofold.ai in at least ONE of the following locations:
+
+1. Your project's README or documentation
+2. An "About" or "Credits" page in your application
+3. The footer or credits section of your website
+4. Code comments in files that use substantial portions of this code
+
+Example attributions:
+
+  "Built with Startup Strategy Council by Echofold - https://echofold.ai"
+
+  "Powered by Echofold - https://echofold.ai"
+
+  "Based on Startup Strategy Council (https://echofold.ai)"
+
+This attribution requirement is part of the Apache 2.0 License terms under
+Section 4(d), which requires preservation of attribution notices contained
+in the NOTICE file.
+
+================================================================================
+THIRD-PARTY NOTICES
+================================================================================
+
+This project uses the following open-source libraries:
+
+- Next.js (MIT License) - https://nextjs.org
+- React (MIT License) - https://reactjs.org
+- Tailwind CSS (MIT License) - https://tailwindcss.com
+- shadcn/ui (MIT License) - https://ui.shadcn.com
+- Lucide Icons (ISC License) - https://lucide.dev
+
+================================================================================
+CONTACT
+================================================================================
+
+For questions about this license or attribution requirements:
+- Website: https://echofold.ai
+- GitHub: https://github.com/kevincollinsirl/startup-strategy-council

@@ -82,7 +82,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                   <Target className="size-4" />
                 </div>
                 <div className="grid flex-1 text-left text-sm leading-tight">
-                  <span className="truncate font-semibold">Strategy Council</span>
+                  <span className="truncate font-semibold">Startup Strategy Council</span>
                   <span className="truncate text-xs text-muted-foreground">{companyName || "Your Company"}</span>
                 </div>
               </Link>

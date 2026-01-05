@@ -1,39 +1,48 @@
 {
-  "tam": 50000000000,
-  "sam": 5000000000,
-  "som": 50000000,
+  "tam": 25000000000,
+  "sam": 3000000000,
+  "som": 75000000,
   "marketTrends": [
-    "AI adoption accelerating in regulated industries",
-    "Compliance requirements blocking standard AI tools",
-    "Demand for vibe coding and AI-assisted development",
-    "Enterprise shift to open-source AI models",
-    "Growing need for AI that doesn't train on user data"
+    "Rapid adoption of AI-powered analytics tools",
+    "Shift from traditional BI to real-time insights",
+    "Growing demand for privacy-compliant data solutions",
+    "E-commerce market expansion post-pandemic",
+    "Increasing focus on customer retention metrics"
   ],
   "competitors": [
     {
-      "id": "comp-openai",
-      "name": "OpenAI",
-      "description": "Leading AI provider but blocked in regulated industries",
-      "strengths": ["Best models", "Brand recognition", "Developer ecosystem"],
-      "weaknesses": ["Data privacy concerns", "Not compliant for finance/healthcare", "Expensive"],
-      "marketShare": 60,
-      "threat": "low"
+      "id": "comp-mixpanel",
+      "name": "Mixpanel",
+      "description": "Product analytics platform for mobile and web",
+      "strengths": ["Strong brand", "Large customer base", "Comprehensive features"],
+      "weaknesses": ["Expensive at scale", "Complex setup", "Less AI-focused"],
+      "marketShare": 25,
+      "threat": "high"
     },
     {
-      "id": "comp-anthropic",
-      "name": "Anthropic",
-      "description": "Claude provider, strong but same compliance issues",
-      "strengths": ["Safety focus", "Long context", "Claude quality"],
-      "weaknesses": ["Same data concerns as OpenAI", "Smaller ecosystem"],
+      "id": "comp-amplitude",
+      "name": "Amplitude",
+      "description": "Digital analytics platform with behavioral insights",
+      "strengths": ["Enterprise focus", "Good integrations", "Strong support"],
+      "weaknesses": ["High pricing", "Steep learning curve", "Limited customization"],
       "marketShare": 20,
-      "threat": "low"
+      "threat": "high"
     },
     {
-      "id": "comp-cursor",
-      "name": "Cursor",
-      "description": "AI coding IDE",
-      "strengths": ["Developer focused", "Good UX", "Fast iteration"],
-      "weaknesses": ["Not compliant", "Limited to coding"],
+      "id": "comp-heap",
+      "name": "Heap",
+      "description": "Auto-capture analytics with retroactive analysis",
+      "strengths": ["Easy implementation", "Retroactive data", "Good UX"],
+      "weaknesses": ["Performance issues at scale", "Limited AI features"],
+      "marketShare": 10,
+      "threat": "medium"
+    },
+    {
+      "id": "comp-posthog",
+      "name": "PostHog",
+      "description": "Open-source product analytics suite",
+      "strengths": ["Open source", "Self-hosted option", "Developer-friendly"],
+      "weaknesses": ["Smaller team", "Less enterprise features", "Younger product"],
       "marketShare": 5,
       "threat": "medium"
     }
