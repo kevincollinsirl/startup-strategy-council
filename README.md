@@ -73,6 +73,8 @@ You can skip onboarding and configure everything later in Settings.
 
 ## 📖 How It Works
 
+![How It Works](public/screenshots/how-it-works.png)
+
 1. **Create a Decision** - Describe your strategic choice and add 2-4 options with estimated costs and timelines
 
 2. **Run the Council** - Each of the 6 agents independently evaluates all options based on your company context
